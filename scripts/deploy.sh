@@ -14,7 +14,7 @@ cd www
 
 # Gulp for the appropriate theme
 export DISABLE_NOTIFIER=true;
-for theme in themes/custom/wikilex; do
+for theme in themes/custom/wikilex_theme; do
   cd ${theme}
   [ -d node_modules ] || npm install
   gulp build
