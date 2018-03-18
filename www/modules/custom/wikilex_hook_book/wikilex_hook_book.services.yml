@@ -1,0 +1,9 @@
+# Make Drupal know about our route subscriber
+services:
+  wikilex_hook_book.route_subscriber:
+    # Tell Drupal which class to use
+    class: 'Drupal\wikilex_hook_book\Routing\WikilexHookBookRouteSubscriber'
+    # This next code is the key, as it tells Drupal to use our class when
+    # building routes.
+    tags:
+      - { name: event_subscriber }

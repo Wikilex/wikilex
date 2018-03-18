@@ -1,0 +1,78 @@
+# Migration metadata
+id: codes_book
+label: "Import codes in Book Structure"
+#migration_group: wikilex
+
+# Source plugin, id defined in the @MigrateSource annotation
+# in the src/Plugin/migrate/source/Codes.php file.
+# What are you migrating?
+source:
+  plugin: codes_book
+  cid: C_06070666
+
+# Destination plugin
+# What do you want to create?
+destination:
+  plugin: book
+
+# Process plugin
+# How are the different fields mapped?
+process:
+  # TODO
+  # On a besoin du
+  # -  NID, le nid de la node
+  # -  BID. Dans ce cas, c'est le nid
+  # -  PID. Dans ce cas, c'est le nid
+  # - has_children . 1 ou 0 Dans ce cas c'est oui
+  # - weight . Dans ce cas c'est 0
+  # - depth Dans ce cas c'est 0
+  # - p1 : Dans ce cas, c'est le nid
+
+
+  nid:
+    plugin: entity_lookup
+    source: cID
+    value_key: field_cid
+    bundle: code_de_lois
+    entity_type: node
+    ignore_case: true
+  'book/bid':
+    plugin: entity_lookup
+    source: cID
+    value_key: field_cid
+    bundle: code_de_lois
+    entity_type: node
+    ignore_case: true
+
+  'book/pid':
+    plugin: entity_lookup
+    source: cID
+    value_key: field_cid
+    bundle: code_de_lois
+    entity_type: node
+    ignore_case: true
+  'book/weight':
+    plugin: default_value
+    default_value: 0
+  has_children:
+    plugin: default_value
+    default_value: 1
+  weight:
+    plugin: default_value
+    default_value: 0
+  depth:
+    plugin: default_value
+    default_value: 0
+
+
+#Absolutely necessary (even if empty) if you don't want an error.
+migration_dependencies:
+  required:
+    - codes
+    - sections
+    - articles
+
+dependencies:
+  enforced:
+    module:
+      - wikilex_migrate

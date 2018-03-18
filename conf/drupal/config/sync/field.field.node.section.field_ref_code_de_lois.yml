@@ -1,0 +1,28 @@
+uuid: 203e6346-38a3-4972-9dee-0eefb31c0bcc
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ref_code_de_lois
+    - node.type.code_de_lois
+    - node.type.section
+id: node.section.field_ref_code_de_lois
+field_name: field_ref_code_de_lois
+entity_type: node
+bundle: section
+label: 'Référence Code de lois'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      code_de_lois: code_de_lois
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

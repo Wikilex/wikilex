@@ -1,0 +1,24 @@
+backup_db.export:
+  title: 'Export'
+  route_name: backup_db.export
+  base_route: backup_db.export
+
+backup_db.history:
+  title: 'Export History'
+  route_name: backup_db.export_history
+  base_route: backup_db.export
+
+backup_db.settings:
+  title: 'Settings'
+  route_name: backup_db.settings
+  base_route: backup_db.export
+
+backup_db.cron:
+  title: 'Cron'
+  route_name: backup_db.cron
+  base_route: backup_db.export
+
+backup_db.tables:
+  title: 'Tables'
+  route_name: backup_db.tables
+  base_route: backup_db.export

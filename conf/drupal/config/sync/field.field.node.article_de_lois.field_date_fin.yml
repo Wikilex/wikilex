@@ -1,0 +1,21 @@
+uuid: c306357b-a946-4bbe-97e0-10b7fac4e222
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_date_fin
+    - node.type.article_de_lois
+  module:
+    - datetime
+id: node.article_de_lois.field_date_fin
+field_name: field_date_fin
+entity_type: node
+bundle: article_de_lois
+label: 'Date fin'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

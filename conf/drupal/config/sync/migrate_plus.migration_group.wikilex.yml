@@ -1,0 +1,15 @@
+uuid: 76e53549-286c-48a0-8f92-52c16817166a
+langcode: fr
+status: true
+dependencies:
+  enforced:
+    module:
+      - wikilex_migrate
+_core:
+  default_config_hash: ACHrYC9TueR_4dXKAHFAqpHmKL6cNm8ivgFOUqX5lAU
+id: wikilex
+label: 'Wikilex Imports'
+description: 'Imports for Wikilex'
+source_type: 'Legi-php (SQL)'
+module: null
+shared_configuration: null

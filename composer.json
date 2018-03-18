@@ -1,0 +1,77 @@
+{
+    "name": "wikilex",
+    "description": "Projet pour permettre une collaboration sur les textes de lois.",
+    "type": "project",
+    "license": "GPL-2.0+",
+    "authors": [
+        {
+            "name": "Pierre NOEL",
+            "role": "maintainer"
+        }
+    ],
+    "repositories": {
+        "drupal": {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
+        }
+    },
+    "require": {
+        "composer/installers": "~1.0",
+        "cweagans/composer-patches": "~1.0",
+        "drush/drush": "^9.1",
+        "drupal/core": "^8.4",
+        "drupal/admin_toolbar": "1.x-dev",
+        "drupal/allowed_formats": "~1.0",
+        "drupal/backup_db": "~1.0",
+        "drupal/cshs": "1.0-beta4",
+        "drupal/config_split": "~1.2",
+        "drupal/context": "^4.0",
+        "drupal/diff": "~1.0",
+        "drupal/entity_browser": "~1.1",
+        "drupal/facets": "1.0-beta2 ",
+        "drupal/field_group": "~1.0",
+        "drupal/inline_entity_form": "1.0-beta1",
+        "drupal/migrate_plus": "4.0-beta3",
+        "drupal/migrate_tools": "4.x-dev",
+        "drupal/outline" : "1.x-dev",
+        "drupal/pathauto": "~1.0",
+        "drupal/route_condition": "1.0-alpha2",
+        "drupal/search_api": "~1.0",
+        "drupal/search_api_solr": "~1.0",
+        "drupal/structure_sync": "~1.5",
+        "drupal/token": "~1.0",
+        "drupal/toolbar_menu": "~2.0",
+        "drupal/taxonomy_unique": "~2.0",
+        "drupal/ds": "^3.1",
+        "drupal/adminimal_theme": "~1.3",
+        "drupal/bootstrap" : "^3.7"
+    },
+    "require-dev": {
+        "drupal/devel": "~1.0",
+        "drupal/stage_file_proxy": "~1.0"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "scripts": {
+        "post-install-cmd": [
+            "./scripts/clean_git_directory.sh"
+        ],
+        "post-update-cmd": [
+            "./scripts/clean_git_directory.sh"
+        ]
+    },
+    "extra": {
+        "installer-paths": {
+            "www/core": ["type:drupal-core"],
+            "www/modules/contrib/{$name}": ["type:drupal-module"],
+            "www/profiles/contrib/{$name}": ["type:drupal-profile"],
+            "www/themes/contrib/{$name}": ["type:drupal-theme"],
+            "drush/contrib/{$name}": ["type:drupal-drush"]
+        },
+        "patches": {
+            "drupal/adminimal_theme" : {
+                "Colors in horizontal and vertical toolbar need fixing." : "https://www.drupal.org/files/issues/adminimal_theme-fix-toolbar-colors-28226369.patch"
+            }
+        }
+    }
+}

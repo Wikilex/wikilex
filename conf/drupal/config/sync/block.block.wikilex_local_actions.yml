@@ -1,0 +1,20 @@
+uuid: f462e4ed-ebc4-4e99-8fee-98c4ab8cf32a
+langcode: fr
+status: true
+dependencies:
+  theme:
+    - wikilex
+_core:
+  default_config_hash: PffmQ-ABSz5tFjWmVsR7NesunDnEivvopnJnBjl8KNE
+id: wikilex_local_actions
+theme: wikilex
+region: content
+weight: -10
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Actions d''administration principales'
+  provider: core
+  label_display: '0'
+visibility: {  }

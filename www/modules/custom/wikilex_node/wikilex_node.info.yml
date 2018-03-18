@@ -1,0 +1,8 @@
+name: Node
+type: module
+description: Gestion de l'entité node
+core: 8.x
+package: wikilex
+dependencies:
+  - wikilex_common
+  - ows_entity

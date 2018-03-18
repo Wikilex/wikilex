@@ -1,0 +1,13 @@
+uuid: ca710b73-beca-4590-ba1c-213d1df47c3a
+langcode: fr
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: dJ0L2DNSj5q6XVZAGsuVDpJTh5UeYkIPwKrUOOpr8YI
+id: authenticated
+label: 'Utilisateur authentifié'
+weight: -9
+is_admin: false
+permissions:
+  - 'access content'
+  - 'access printer-friendly version'

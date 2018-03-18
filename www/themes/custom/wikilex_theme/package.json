@@ -1,0 +1,36 @@
+{
+  "name": "wikilex",
+  "version": "1.0.0",
+  "description": "Wikilex",
+  "main": "gulpfile.js",
+  "scripts": {
+    "setup": "npm install",
+    "postinstall": "find node_modules/ -name '*.info' -type f -delete"
+  },
+  "repository": {
+    "type": "git",
+    "url": "wikilex/wikilex"
+  },
+  "author": {
+    "name": "OWS",
+    "url": "http://www.ows.fr"
+  },
+  "license": "GPL-2.0+",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-cache": "^0.4.5",
+    "gulp-concat": "^2.6.0",
+    "gulp-jshint": "^2.0.1",
+    "gulp-load-plugins": "^1.2.4",
+    "gulp-load-subtasks": "^1.1.2",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.2",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-util": "^3.0.7",
+    "jshint": "^2.9.3",
+    "jshint-stylish": "^2.2.1"
+  }
+}

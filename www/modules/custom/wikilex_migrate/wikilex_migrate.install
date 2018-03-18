@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * Implements hook_uninstall().
+ */
+function wikilex_migrate_uninstall() {
+  // Delete this module's migrations.
+  $migrations = [
+    'articles',
+    'sections',
+    'codes',
+  ];
+  foreach ($migrations as $migration) {
+    Drupal::configFactory()->getEditable('migrate_plus.migration.' . $migration)->delete();
+  }
+  Drupal::configFactory()->getEditable('migrate_plus.migration_group.wikilex')->delete();
+}

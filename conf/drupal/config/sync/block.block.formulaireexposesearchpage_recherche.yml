@@ -1,0 +1,23 @@
+uuid: ccea24f2-18f7-43ae-8421-c4ce6f52ffad
+langcode: fr
+status: true
+dependencies:
+  config:
+    - views.view.search
+  module:
+    - views
+  theme:
+    - wikilex_theme
+id: formulaireexposesearchpage_recherche
+theme: wikilex_theme
+region: sidebar_first
+weight: -6
+provider: null
+plugin: 'views_exposed_filter_block:search-page_recherche'
+settings:
+  id: 'views_exposed_filter_block:search-page_recherche'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+visibility: {  }

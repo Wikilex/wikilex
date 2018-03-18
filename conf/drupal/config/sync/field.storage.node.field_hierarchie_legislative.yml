@@ -1,0 +1,20 @@
+uuid: 119586ee-5eaf-4513-b644-ad04def34f9a
+langcode: fr
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_hierarchie_legislative
+field_name: field_hierarchie_legislative
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

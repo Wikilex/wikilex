@@ -1,0 +1,26 @@
+uuid: 0674c986-2862-4ab9-982d-fd472b0566a9
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_nota
+    - node.type.article_de_lois
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    full_html: full_html
+    plain_text: plain_text
+id: node.article_de_lois.field_nota
+field_name: field_nota
+entity_type: node
+bundle: article_de_lois
+label: Nota
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

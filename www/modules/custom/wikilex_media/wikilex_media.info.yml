@@ -1,0 +1,7 @@
+name: Media
+type: module
+description: Gestion de l'entité media
+core: 8.x
+package: wikilex
+dependencies:
+  - wikilex_common

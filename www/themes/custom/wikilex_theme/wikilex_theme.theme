@@ -1,0 +1,11 @@
+<?php
+
+function wikilex_theme_preprocess_views_view__search(&$variables) {
+  $header = $variables['header'];
+  foreach($header as $key => $block) {
+    $new_key = $block['#cache']['keys'][2];
+    $header[$new_key] = $block;
+    unset($header[$key]);
+  }
+  $variables['header'] = $header;
+}

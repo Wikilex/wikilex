@@ -1,0 +1,21 @@
+uuid: 2cb59d0c-41b7-442c-acb1-b51d543647c1
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_date_debut
+    - node.type.article_de_lois
+  module:
+    - datetime
+id: node.article_de_lois.field_date_debut
+field_name: field_date_debut
+entity_type: node
+bundle: article_de_lois
+label: 'Date début'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

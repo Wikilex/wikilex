@@ -1,0 +1,39 @@
+wikilex_codes.admin_settings:
+  path: '/admin/config/content/wikilex_codes'
+  defaults:
+    _form: '\Drupal\wikilex_codes\Form\CodesSettingsForm'
+    _title: 'Wikilex Codes Manager Settings'
+  requirements:
+    _permission: 'administer wikilex_codes'
+
+wikilex_codes.list:
+  path: '/admin/structure/wikilex_codes'
+  defaults:
+    _controller: '\Drupal\wikilex_codes\Controller\CodesListController::build'
+    _title: 'Wikilex Codes'
+  requirements:
+    _permission: 'access wikilex_codes'
+
+wikilex_codes.add_code:
+  path: '/admin/structure/wikilex_codes/add'
+  defaults:
+    _form: '\Drupal\wikilex_codes\Form\AddCodeForm'
+    _title: 'Ajouter un Code de loi'
+  requirements:
+    _permission: 'access wikilex_codes'
+
+wikilex_codes.manage_code:
+  path: '/admin/structure/wikilex_codes/edit/{cid}'
+  defaults:
+    _form: '\Drupal\wikilex_codes\Form\CodesManagerForm'
+    _title: 'Editer la structure du Code de loi'
+  requirements:
+    _permission: 'access wikilex_codes'
+
+wikilex_codes.delete_form:
+  path: '/admin/structure/wikilex_codes/delete/{cid}'
+  defaults:
+    _form: '\Drupal\wikilex_codes\Form\DeleteCodeForm'
+    _title: 'Supprimer un Code de loi'
+  requirements:
+    _permission: 'access wikilex_codes'    

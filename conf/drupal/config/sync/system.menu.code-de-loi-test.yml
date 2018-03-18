@@ -1,0 +1,8 @@
+uuid: 52a7c8b5-031c-4e2d-856f-b8bd0d4302eb
+langcode: fr
+status: true
+dependencies: {  }
+id: code-de-loi-test
+label: 'Code de loi test'
+description: ''
+locked: false

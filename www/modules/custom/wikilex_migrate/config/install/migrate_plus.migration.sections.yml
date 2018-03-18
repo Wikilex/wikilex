@@ -1,0 +1,77 @@
+# Migration metadata
+id: sections
+label: "Import sections"
+migration_group: wikilex
+
+# Source plugin, id defined in the @MigrateSource annotation
+# in the src/Plugin/migrate/source/Section.php file.
+# What are you migrating?
+source:
+  plugin: sections
+
+# Destination plugin
+# What do you want to create?
+destination:
+  plugin: entity:node
+
+# Process plugin
+# How are the different fields mapped?
+process:
+  # Node type (bundle)
+  type:
+    plugin: default_value
+    default_value: section
+
+  # The default plugin is 'get' that simply copies values
+  # It can be shorthanded directly, but is stricly equivalent to
+  # title:
+  #   plugin: get
+  #   source: Title
+  title: titre_ta
+  field_cle_legi: id
+  field_ref_code_de_lois:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: cid
+    -
+      plugin: migration_lookup
+      migration: codes
+      source: cid
+
+
+  #field_ref_code_de_lois:
+  #  plugin: entity_lookup
+  #  source: cid
+  #  value_key: field_cle_legi
+  #  bundle: code_de_lois
+  #  entity_type: node
+  #  ignore_case: true
+  #field_ref_sections:
+  #  plugin: migration_lookup
+  #  migration: sections
+  #  source: parent
+
+
+
+#Absolutely necessary (even if empty) if you don't want an error.
+# Our Sections nodes have references to Codes, so we want those to be
+# imported first. We make that dependency explicit here - by putting those
+# migrations under the 'required' key, we ensure that the tools will prevent
+# us from running the sections migration unless the  codes
+# migrations are complete (although we can override the dependency check by
+# passing --force to the drush migrate-import command). We can also add
+# 'optional' dependencies - these affect the order in which migrations are
+# displayed, and run by default, but does not force you run them in that
+# order.
+# The general rule of thumb is that any migrations referenced by migration
+# process plugins should be required here.
+migration_dependencies:
+  required:
+    - codes
+dependencies:
+  enforced:
+    module:
+      - migrate_plus
+      - migrate_tools
+      - wikilex_migrate

@@ -1,0 +1,9 @@
+uuid: 7f6ead5c-5dd3-43b2-8bb9-73b236443145
+langcode: fr
+status: true
+dependencies: {  }
+name: 'Hiérarchie Législative'
+vid: hierarchie_legislative
+description: ''
+hierarchy: 1
+weight: 0

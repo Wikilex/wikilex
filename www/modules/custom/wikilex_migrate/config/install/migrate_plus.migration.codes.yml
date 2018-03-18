@@ -1,0 +1,45 @@
+# Migration metadata
+id: codes
+label: "Import codes"
+migration_group: wikilex
+
+# Source plugin, id defined in the @MigrateSource annotation
+# in the src/Plugin/migrate/source/Codes.php file.
+# What are you migrating?
+source:
+  plugin: codes
+  cid: C_06070666
+
+# Destination plugin
+# What do you want to create?
+destination:
+  plugin: entity:node
+
+# Process plugin
+# How are the different fields mapped?
+# On map les propriété dans le sens :
+# NOM_DESTINATION : NOM_SOURCE (nom source étant celui dans la requète sql)
+process:
+  # Node type (bundle)
+  type:
+    plugin: default_value
+    default_value: code_de_lois
+
+  # The default plugin is 'get' that simply copies values
+  # It can be shorthanded directly, but is stricly equivalent to
+  # title:
+  #   plugin: get
+  #   source: Title
+  title: titrefull
+  field_cle_legi: cid_full
+  field_cid: cID
+
+
+
+#Absolutely necessary (even if empty) if you don't want an error.
+migration_dependencies: {}
+
+dependencies:
+  enforced:
+    module:
+      - wikilex_migrate

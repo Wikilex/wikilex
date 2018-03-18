@@ -1,0 +1,25 @@
+uuid: cc2d03b7-f190-42af-8cff-26ab07fd5f00
+langcode: fr
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - wikilex
+_core:
+  default_config_hash: fRKXNB91UxDvEMkzCR8ZBsawfC6Fqbme2gtobei3gu4
+id: wikilex_branding
+theme: wikilex
+region: header
+weight: 0
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Marque du site'
+  provider: system
+  label_display: '0'
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: true
+visibility: {  }

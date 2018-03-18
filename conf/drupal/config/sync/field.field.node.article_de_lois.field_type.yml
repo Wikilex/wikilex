@@ -1,0 +1,19 @@
+uuid: b16da5ae-c192-46dc-87ea-fe4354f7418e
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_type
+    - node.type.article_de_lois
+id: node.article_de_lois.field_type
+field_name: field_type
+entity_type: node
+bundle: article_de_lois
+label: Type
+description: 'Le type de document législatif.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

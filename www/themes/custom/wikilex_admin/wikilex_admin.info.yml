@@ -1,0 +1,20 @@
+name: Wikilex Admin
+type: theme
+base theme: adminimal_theme
+description: 'Wikilex Custom Admin Theme. Extend Adminimal Admin'
+core: 8.x
+libraries:
+ - wikilex_admin/global-styling
+
+regions:
+  header: 'Header'
+  pre_content: 'Pre-content'
+  breadcrumb: Breadcrumb
+  highlighted: Highlighted
+  help: Help
+  content: Content
+  page_top: 'Page top'
+  page_bottom: 'Page bottom'
+  sidebar_first: 'First sidebar'
+regions_hidden:
+  - sidebar_first

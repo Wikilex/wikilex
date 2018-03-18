@@ -1,0 +1,22 @@
+uuid: 03e395cb-f544-4082-8355-597e90e36d81
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.article_de_lois
+id: node.article_de_lois.promote
+field_name: promote
+entity_type: node
+bundle: article_de_lois
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

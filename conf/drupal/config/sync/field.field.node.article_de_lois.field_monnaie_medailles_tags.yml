@@ -1,0 +1,29 @@
+uuid: 090dfac5-8dac-4257-8d1e-44653cced958
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_monnaie_medailles_tags
+    - node.type.article_de_lois
+    - taxonomy.vocabulary.monnaie_medailles_tags
+id: node.article_de_lois.field_monnaie_medailles_tags
+field_name: field_monnaie_medailles_tags
+entity_type: node
+bundle: article_de_lois
+label: 'Monnaie Medailles tags'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      monnaie_medailles_tags: monnaie_medailles_tags
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

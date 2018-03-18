@@ -1,0 +1,35 @@
+<?php
+
+/**
+ * @file
+ * Contains wikilex_taxonomy_term.module.
+ */
+
+use Drupal\wikilex_taxonomy_term\Entity\BaseTaxonomyTerm;
+use Drupal\wikilex_taxonomy_term\TaxonomyTermStorage;
+
+/**
+ * Implements hook_entity_type_alter().
+ */
+function wikilex_taxonomy_term_entity_type_alter(array &$entity_types) {
+  if (isset($entity_types['taxonomy_term'])) {
+    $taxonomy_term = $entity_types['taxonomy_term'];
+    $taxonomy_term->setClass(BaseTaxonomyTerm::class);
+    $taxonomy_term->setStorageClass(TaxonomyTermStorage::class);
+  }
+}
+
+/**
+ * Implements hook_entity_extra_field_info().
+ */
+function wikilex_taxonomy_term_entity_extra_field_info() {
+  $extra = [];
+
+  foreach (TaxonomyTermStorage::BUNDLE_CLASSES as $type => $class) {
+    if (is_callable($class . '::getExtraFieldDefinitions')) {
+      $extra['taxonomy_term'][$type] = $class::getExtraFieldDefinitions();
+    }
+  }
+
+  return $extra;
+}

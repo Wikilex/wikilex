@@ -1,0 +1,9 @@
+uuid: 7c326807-2ea2-491d-9c16-a9015a10a430
+langcode: fr
+status: true
+dependencies: {  }
+name: 'Monnaie Medailles tags'
+vid: monnaie_medailles_tags
+description: 'Sémantique liée au Code des instruments monétaires et des médailles'
+hierarchy: 0
+weight: 0

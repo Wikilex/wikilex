@@ -1,0 +1,29 @@
+uuid: 55d32b67-7f28-4dd9-af97-8665e5df0396
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.article_de_lois.body
+    - node.type.article_de_lois
+  module:
+    - text
+    - user
+id: node.article_de_lois.teaser
+targetEntityType: node
+bundle: article_de_lois
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    region: content
+hidden:
+  langcode: true

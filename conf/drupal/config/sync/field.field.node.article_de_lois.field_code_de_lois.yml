@@ -1,0 +1,29 @@
+uuid: 38e85346-5d64-4998-98fa-0d13a4746e72
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_code_de_lois
+    - node.type.article_de_lois
+    - taxonomy.vocabulary.codes_de_lois
+id: node.article_de_lois.field_code_de_lois
+field_name: field_code_de_lois
+entity_type: node
+bundle: article_de_lois
+label: 'Code de lois'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      codes_de_lois: codes_de_lois
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

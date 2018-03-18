@@ -1,0 +1,11 @@
+uuid: 132d9b34-f4ea-4ffe-8ded-aa62ecebde70
+langcode: fr
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.hierarchie_legislative
+id: taxonomy_term.hierarchie_legislative
+target_entity_type_id: taxonomy_term
+target_bundle: hierarchie_legislative
+default_langcode: site_default
+language_alterable: false

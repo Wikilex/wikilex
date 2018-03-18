@@ -1,0 +1,22 @@
+uuid: c1303f92-3159-48b4-b817-7555c7563df1
+langcode: fr
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - wikilex_theme
+_core:
+  default_config_hash: fNNLN48MSGSLiqwIFywCuxH2Dk_IxDbaP0kYhg_IPrg
+id: wikilex_theme_content
+theme: wikilex_theme
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

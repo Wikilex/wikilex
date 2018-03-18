@@ -1,0 +1,19 @@
+uuid: c3b7a044-9840-476b-bd80-3302c67980ba
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_cle_legi
+    - node.type.section
+id: node.section.field_cle_legi
+field_name: field_cle_legi
+entity_type: node
+bundle: section
+label: 'Clé LEGI'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

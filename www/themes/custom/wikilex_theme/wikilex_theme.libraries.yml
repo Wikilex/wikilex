@@ -1,0 +1,16 @@
+global-styling:
+  version: 1.0
+  css:
+    base:
+      assets/stylesheets/wikilex_theme_style.css: {}
+      assets/stylesheets/wikilex_theme_print.css: { media: print }
+
+  js:
+    assets/scripts/app.js: {}
+
+  dependencies:
+    - core/jquery
+    - core/drupal.ajax
+    - core/drupal
+    - core/drupalSettings
+    - core/jquery.once

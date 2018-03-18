@@ -1,0 +1,57 @@
+.view-id-search.view-display-id-page_recherche {
+  .view-header {
+    .taxonomy-facets {
+      .block-facet--links {
+        margin: 10px 20px;
+
+      }
+      .hierarchie-legislative {
+        display: flex;
+      }
+      .tags-facets {
+
+      }
+      h4 {
+
+      }
+    }
+    #views-exposed-form-search-page-recherche {
+      .form-item-search-api-fulltext {
+        display: block;
+      }
+      #edit-actions {
+        display: block;
+      }
+      button {
+        display: block;
+        margin: 10px auto;
+      }
+    }
+  }
+  .view-content {
+    table {
+      thead {
+        th,
+        th a{
+          font-size: 2rem;
+
+        }
+      }
+      tbody {
+        .views-field-title {
+          min-width: 90px;
+          vertical-align: middle;
+          a {
+            font-size: 1.6rem;
+            vertical-align: middle;
+          }
+        }
+        .views-field-field-ref-code-de-lois,
+        .views-field-field-ref-sections{
+          min-width: 150px;
+        }
+      }
+    }
+  }
+
+}

@@ -1,0 +1,17 @@
+codes:
+  C_06070666:
+    code_name: 'Code des instruments monétaires et des médailles'
+    code_cid: C_06070666
+    vocabulaires:
+      -
+        vocabulaire_name: 'Thématiques C_06070666'
+        vocabulaire_machine_name: C_06070666_thematiques
+        vocabulaire_description: 'Liste des thématiques de ce code de loi'
+      -
+        vocabulaire_name: 'TEST 1'
+        vocabulaire_machine_name: C_06070666_test_1
+        vocabulaire_description: 'vocabulaire pour tester le module'
+      -
+        vocabulaire_name: 'TEST 2 '
+        vocabulaire_machine_name: C_06070666_test_2
+        vocabulaire_description: 'vocabulaire pour tester le module'

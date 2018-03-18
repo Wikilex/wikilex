@@ -1,0 +1,39 @@
+backup_db.export:
+  path: '/admin/config/backup_db'
+  defaults:
+    _form: '\Drupal\backup_db\Form\BackupDatabaseForm'
+    _title: 'Backup Database'
+  requirements:
+    _permission: 'administer backup_db settings'
+
+backup_db.export_history:
+  path: '/admin/config/backup_db/history'
+  defaults:
+    _controller: '\Drupal\backup_db\Controller\BackupDatabaseController::historyOverview'
+    _title: 'Backup Database history'
+  requirements:
+    _permission: 'administer backup_db settings'
+
+backup_db.settings:
+  path: '/admin/config/backup_db/settings'
+  defaults:
+    _form: '\Drupal\backup_db\Form\BackupDatabaseSettingsForm'
+    _title: 'Backup Database settings'
+  requirements:
+    _permission: 'administer backup_db settings'
+
+backup_db.cron:
+  path: '/admin/config/backup_db/cron'
+  defaults:
+    _form: '\Drupal\backup_db\Form\BackupDatabaseCronForm'
+    _title: 'Backup Database Cron settings'
+  requirements:
+    _permission: 'administer backup_db settings'
+
+backup_db.tables:
+  path: '/admin/config/backup_db/tables'
+  defaults:
+    _form: '\Drupal\backup_db\Form\BackupDatabaseTablesForm'
+    _title: 'Backup Database tables'
+  requirements:
+    _permission: 'administer backup_db settings'

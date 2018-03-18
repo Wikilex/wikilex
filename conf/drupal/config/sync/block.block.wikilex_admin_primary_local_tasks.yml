@@ -1,0 +1,22 @@
+uuid: 9db8420e-367b-4a12-8109-0919ba8c78e8
+langcode: fr
+status: true
+dependencies:
+  theme:
+    - wikilex_admin
+_core:
+  default_config_hash: FsVUc3u89uRlDqkDnSs4pR95GvP78ChuxGL_5WMAvJU
+id: wikilex_admin_primary_local_tasks
+theme: wikilex_admin
+region: header
+weight: 0
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Primary tabs'
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: false
+visibility: {  }

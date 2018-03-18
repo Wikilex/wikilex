@@ -1,0 +1,320 @@
+uuid: 9199d087-53c9-4d9d-88c4-e632ab918e2c
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - field.storage.node.field_cle_legi
+    - field.storage.node.field_cid
+    - field.storage.node.field_date_publi
+    - field.storage.node.field_date_debut
+    - field.storage.node.field_date_fin
+    - field.storage.node.field_derniere_modification
+    - field.storage.node.field_etat
+    - field.storage.node.field_nature
+    - field.storage.node.field_nota
+    - field.storage.node.field_num
+    - field.storage.node.field_ref_code_de_lois
+    - field.storage.node.field_ref_sections
+    - field.storage.node.field_code_de_lois
+    - field.storage.node.field_hierarchie_legislative
+    - field.storage.node.field_monnaie_medailles_tags
+    - search_api.server.search_bdd
+  module:
+    - search_api
+    - node
+    - taxonomy
+id: search_index
+name: 'Search Index'
+description: ''
+read_only: false
+field_settings:
+  node_grants:
+    label: 'Information d''accès du nœud.'
+    property_path: search_api_node_grants
+    type: string
+    indexed_locked: true
+    type_locked: true
+    hidden: true
+  body:
+    label: Body
+    datasource_id: 'entity:node'
+    property_path: body
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.body
+  field_cle_legi:
+    label: 'Clé LEGI'
+    datasource_id: 'entity:node'
+    property_path: field_cle_legi
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_cle_legi
+  field_cid:
+    label: cID
+    datasource_id: 'entity:node'
+    property_path: field_cid
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_cid
+  type:
+    label: 'Content type'
+    datasource_id: 'entity:node'
+    property_path: type
+    type: string
+  field_date_publi:
+    label: 'Date de publication'
+    datasource_id: 'entity:node'
+    property_path: field_date_publi
+    type: date
+    dependencies:
+      config:
+        - field.storage.node.field_date_publi
+  field_date_debut:
+    label: 'Date début'
+    datasource_id: 'entity:node'
+    property_path: field_date_debut
+    type: date
+    dependencies:
+      config:
+        - field.storage.node.field_date_debut
+  field_date_fin:
+    label: 'Date fin'
+    datasource_id: 'entity:node'
+    property_path: field_date_fin
+    type: date
+    dependencies:
+      config:
+        - field.storage.node.field_date_fin
+  field_derniere_modification:
+    label: 'Dernière modification'
+    datasource_id: 'entity:node'
+    property_path: field_derniere_modification
+    type: date
+    dependencies:
+      config:
+        - field.storage.node.field_derniere_modification
+  sticky:
+    label: 'Epinglé en haut des listes'
+    datasource_id: 'entity:node'
+    property_path: sticky
+    type: boolean
+  field_etat:
+    label: Etat
+    datasource_id: 'entity:node'
+    property_path: field_etat
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_etat
+  revision_timestamp:
+    label: 'Heure de création de la révision'
+    datasource_id: 'entity:node'
+    property_path: revision_timestamp
+    type: date
+  changed_1:
+    label: Modifié
+    datasource_id: 'entity:node'
+    property_path: changed
+    type: date
+  field_nature:
+    label: Nature
+    datasource_id: 'entity:node'
+    property_path: field_nature
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_nature
+  field_nota:
+    label: Nota
+    datasource_id: 'entity:node'
+    property_path: field_nota
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_nota
+  field_num:
+    label: num
+    datasource_id: 'entity:node'
+    property_path: field_num
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_num
+  field_ref_code_de_lois:
+    label: 'Référence Code de lois'
+    datasource_id: 'entity:node'
+    property_path: field_ref_code_de_lois
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_ref_code_de_lois
+  field_ref_sections:
+    label: 'Référence Sections'
+    datasource_id: 'entity:node'
+    property_path: field_ref_sections
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_ref_sections
+  revision_uid:
+    label: 'Révision utilisateur'
+    datasource_id: 'entity:node'
+    property_path: revision_uid
+    type: integer
+  title:
+    label: Title
+    datasource_id: 'entity:node'
+    property_path: title
+    type: string
+  created:
+    label: 'Écrit le'
+    datasource_id: 'entity:node'
+    property_path: created
+    type: date
+  uid:
+    label: 'Écrit par'
+    datasource_id: 'entity:node'
+    property_path: uid
+    type: integer
+    indexed_locked: true
+    type_locked: true
+  status:
+    label: status
+    datasource_id: 'entity:node'
+    property_path: status
+    type: boolean
+    indexed_locked: true
+    type_locked: true
+  field_code_de_lois:
+    label: 'Code de lois'
+    datasource_id: 'entity:node'
+    property_path: field_code_de_lois
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_code_de_lois
+  field_hierarchie_legislative:
+    label: 'Hiérarchie législative'
+    datasource_id: 'entity:node'
+    property_path: field_hierarchie_legislative
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_hierarchie_legislative
+  field_monnaie_medailles_tags:
+    label: 'Monnaie Medailles tags'
+    datasource_id: 'entity:node'
+    property_path: field_monnaie_medailles_tags
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_monnaie_medailles_tags
+  description:
+    label: Description
+    datasource_id: 'entity:taxonomy_term'
+    property_path: description
+    type: text
+  tid:
+    label: 'Identifiant (ID) du terme'
+    datasource_id: 'entity:taxonomy_term'
+    property_path: tid
+    type: integer
+  vid:
+    label: Vocabulaire
+    datasource_id: 'entity:taxonomy_term'
+    property_path: vid
+    type: string
+  name:
+    label: Name
+    datasource_id: 'entity:taxonomy_term'
+    property_path: name
+    type: string
+  changed:
+    label: Modifié
+    datasource_id: 'entity:taxonomy_term'
+    property_path: changed
+    type: date
+datasource_settings:
+  'entity:node':
+    bundles:
+      default: true
+      selected: {  }
+    languages:
+      default: true
+      selected: {  }
+  'entity:taxonomy_term':
+    bundles:
+      default: true
+      selected: {  }
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  entity_status: {  }
+  tokenizer:
+    all_fields: false
+    fields:
+      - body
+      - field_nota
+      - description
+    spaces: ''
+    overlap_cjk: 1
+    minimum_word_size: '3'
+    weights:
+      preprocess_index: -6
+      preprocess_query: -6
+  rendered_item: {  }
+  aggregated_field: {  }
+  content_access:
+    weights:
+      preprocess_query: -30
+  html_filter:
+    all_fields: false
+    fields:
+      - body
+      - field_cle_legi
+      - field_cid
+      - type
+      - field_etat
+      - field_nature
+      - field_nota
+      - field_num
+      - title
+      - description
+      - vid
+      - name
+    title: true
+    alt: true
+    tags:
+      h1: 5
+      h2: 3
+      h3: 2
+      strong: 2
+      b: 2
+      em: 1
+      u: 1
+    weights:
+      preprocess_index: -15
+      preprocess_query: -15
+  add_url: {  }
+  highlight:
+    highlight: always
+    highlight_partial: false
+    excerpt: true
+    excerpt_length: 256
+    exclude_fields: {  }
+    prefix: '<strong>'
+    suffix: '</strong>'
+    weights:
+      postprocess_query: 0
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  index_directly: true
+  cron_limit: 50
+server: search_bdd

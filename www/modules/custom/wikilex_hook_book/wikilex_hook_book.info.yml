@@ -1,0 +1,8 @@
+name: Wikilex Hook Book
+type: module
+core: '8.x'
+package: Wikilex
+description: Ameliorations pour le module Book.
+dependencies:
+  - book
+version: 1.0

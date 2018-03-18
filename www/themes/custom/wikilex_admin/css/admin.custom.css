@@ -1,0 +1,136 @@
+
+.adminimal form .button--success {
+    color: #fff;
+    box-shadow: none;
+    background-image: none;
+    background-color: #40bd63;
+    border-color: #40bd63;
+}
+.adminimal form .button--success:hover {
+    background-color: #48e775;
+    border-color: #48e775;
+}
+
+.adminimal form input.button-wikilex-danger {
+    color: #fff;
+    box-shadow: none;
+    background-image: none;
+    background-color: #940B14;
+    border-color: #940b14;
+}
+
+.adminimal form input.button-wikilex-danger:hover {
+    background-color: #ff2124;
+    border-color: #ff2124;
+}
+
+.adminimal form fieldset.container-vocabulaires {
+    padding-top: 10px;
+}
+
+.field--widget-inline-entity-form-complex input[data-drupal-selector$="-ief-add"] {
+    color: #fff;
+    box-shadow: none;
+    background-image: none;
+    background-color: #40bd63;
+    border-color: #40bd63;
+}
+.field--widget-inline-entity-form-complex input[data-drupal-selector$="-ief-add"]:hover {
+    background-color: #48e775;
+    border-color: #48e775;
+}
+
+.field--widget-inline-entity-form-complex .ief-entity-table tr .js-form-wrapper {
+    margin: 1em 0 1.2em 0;
+}
+
+.field--widget-inline-entity-form-complex .ief-entity-table tr .js-text-format-wrapper .js-form-wrapper {
+    margin: 0;
+}
+
+.field--widget-inline-entity-form-complex .ief-entity-table tr .form-item label {
+    font-size: 1.05rem;
+}
+
+.field--widget-inline-entity-form-complex .ief-entity-table tr.ief-row-entity-form.ief-row-entity td[class*="-label"] {
+    font-size: 1.1rem;
+    font-weight: 900;
+}
+
+
+.field--widget-inline-entity-form-complex .ief-entity-table .field--type-entity-reference table thead th  {
+    font-size: 1.1rem;
+    color: #044a71;
+}
+
+
+.field--widget-inline-entity-form-complex .ief-entity-table .ief-entity-operations input[data-drupal-selector$="-edit"] {
+    color: #fff;
+    box-shadow: none;
+    background-image: none;
+    background-color: #327EBD;
+    border-color: #327EBD;
+}
+
+.field--widget-inline-entity-form-complex .ief-entity-table .ief-entity-operations input[data-drupal-selector$="-remove"] {
+    color: #fff;
+    box-shadow: none;
+    background-image: none;
+    background-color: #bd192c;
+    border-color: #bd192c;
+}
+
+
+.field--widget-inline-entity-form-complex .ief-entity-table .ief-form input[data-drupal-selector$="-edit-save"] {
+    color: #fff;
+    box-shadow: none;
+    background-image: none;
+    background-color: #327EBD;
+    border-color: #327EBD;
+}
+
+.field--widget-inline-entity-form-complex .ief-entity-table .ief-form input[data-drupal-selector$="-edit-cancel"] {
+    color: #fff;
+    box-shadow: none;
+    background-image: none;
+    background-color: #bd192c;
+    border-color: #bd192c;
+}
+
+.field--widget-inline-entity-form-complex .ief-form input[data-drupal-selector$="-ief-add-cancel"] {
+    color: #fff;
+    box-shadow: none;
+    background-image: none;
+    background-color: #bd192c;
+    border-color: #bd192c;
+}
+
+.field--widget-inline-entity-form-complex .ief-form input[data-drupal-selector$="-ief-add-save"] {
+    color: #fff;
+    box-shadow: none;
+    background-image: none;
+    background-color: #40bd63;
+    border-color: #40bd63;
+}
+
+.field--widget-inline-entity-form-complex .ief-form input[data-drupal-selector$="-add-more"] {
+    color: #fff;
+    box-shadow: none;
+    background-image: none;
+    background-color: #53bd46;
+    border-color: #53bd46;
+}
+
+.field--widget-inline-entity-form-complex .ief-form input[data-drupal-selector$="-add-more"]:hover {
+    background-color: #36e74b;
+    border-color: #36e74b;
+}
+
+.field--type-image .js-form-managed-file input[data-drupal-selector$="-remove-button"] {
+    color: #fff;
+    box-shadow: none;
+    background-image: none;
+    background-color: #bd4849;
+    border-color: #bd4849;
+}
+

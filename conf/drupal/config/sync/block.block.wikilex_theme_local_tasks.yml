@@ -1,0 +1,22 @@
+uuid: 97421a58-3fc9-4746-abb6-b3878d360d47
+langcode: fr
+status: true
+dependencies:
+  theme:
+    - wikilex_theme
+_core:
+  default_config_hash: qHdtze2DZ2mFfaJadxjZz6epm92_SN9SAFY4yJGl8Fo
+id: wikilex_theme_local_tasks
+theme: wikilex_theme
+region: header
+weight: -4
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

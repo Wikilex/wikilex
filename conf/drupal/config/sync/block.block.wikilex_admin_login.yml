@@ -1,0 +1,22 @@
+uuid: 949927f9-0e96-4307-b923-f543a93144f2
+langcode: fr
+status: true
+dependencies:
+  module:
+    - user
+  theme:
+    - wikilex_admin
+_core:
+  default_config_hash: _tNDt2vMCxaoUW2WHQ5Ak3lHn4-MU6mg15NPm-GzXXQ
+id: wikilex_admin_login
+theme: wikilex_admin
+region: content
+weight: -4
+provider: null
+plugin: user_login_block
+settings:
+  id: user_login_block
+  label: 'User login'
+  provider: user
+  label_display: visible
+visibility: {  }

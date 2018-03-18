@@ -1,0 +1,20 @@
+uuid: 15a6f64f-a728-4b69-9172-f6ebaead200b
+langcode: fr
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_monnaie_medailles_tags
+field_name: field_monnaie_medailles_tags
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

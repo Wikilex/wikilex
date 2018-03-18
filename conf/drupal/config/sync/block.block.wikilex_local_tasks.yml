@@ -1,0 +1,22 @@
+uuid: 8c4b2a27-d708-4c3e-86fe-ec475b3c1a20
+langcode: fr
+status: true
+dependencies:
+  theme:
+    - wikilex
+_core:
+  default_config_hash: c-06bbElRY5sKmglk74ppgTW93Et4-EJFyNiUZMb8JY
+id: wikilex_local_tasks
+theme: wikilex
+region: content
+weight: -20
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Onglets
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

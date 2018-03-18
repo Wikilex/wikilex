@@ -1,0 +1,3 @@
+administer backup_db settings:
+  title: 'Administer BackupDB settings'
+  description: 'Administer BackupDB settings.'

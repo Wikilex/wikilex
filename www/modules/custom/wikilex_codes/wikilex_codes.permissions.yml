@@ -1,0 +1,7 @@
+access wikilex_codes:
+  title: 'Access Codes Liste'
+  description: 'Accès à la page de gestion des Codes Wikilex.'
+administer wikilex_codes:
+  title: 'Administrer Wikilex Codes'
+  description: 'Accès à la page des réglages du module Wikilex Codes.'
+  restrict access: true

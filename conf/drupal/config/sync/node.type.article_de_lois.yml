@@ -1,0 +1,17 @@
+uuid: 61be203e-227e-463a-9982-5e6faf2abaf0
+langcode: fr
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Article de lois'
+type: article_de_lois
+description: ''
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

@@ -1,0 +1,41 @@
+<?php
+
+/**
+ * @file
+ * Hooks of wikilex_common module.
+ */
+
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\Core\Entity\EntityInterface;
+
+/**
+ * Implements hook_entity_extra_field_info().
+ */
+function wikilex_common_entity_extra_field_info() {
+  $extra = [];
+
+  // Liste des différents types d'entité spécifiques.
+  $entities = [];
+
+  foreach ($entities as $type => $class) {
+    if (is_callable($class . '::getExtraFieldDefinitions')) {
+      $extra[$type][$type] = $class::getExtraFieldDefinitions();
+    }
+  }
+
+  return $extra;
+}
+
+/**
+ * Implements hook_entity_view().
+ */
+function wikilex_common_entity_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode) {
+  if (method_exists($entity, 'getExtraFieldDefinitions')) {
+    $extra = $entity->getExtraFieldDefinitions();
+    foreach ($extra['display'] as $name => $data) {
+      if ($display->getComponent($name) && $data['method']) {
+        $build[$name] = $entity->{$data['method']}($display, $view_mode);
+      }
+    }
+  }
+}

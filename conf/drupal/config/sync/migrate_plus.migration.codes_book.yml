@@ -1,0 +1,60 @@
+uuid: 7847dba5-8d46-4b4b-bf3a-c927d4aaea7e
+langcode: fr
+status: true
+dependencies:
+  enforced:
+    module:
+      - wikilex_migrate
+_core:
+  default_config_hash: lWhfOPiRmtQn7ZnGeFfwMn5rAmJHmiDz2ZdIL9lx10c
+id: codes_book
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: null
+migration_group: null
+label: 'Import codes in Book Structure'
+source:
+  plugin: codes_book
+  cid: C_06070666
+process:
+  nid:
+    plugin: entity_lookup
+    source: cID
+    value_key: field_cid
+    bundle: code_de_lois
+    entity_type: node
+    ignore_case: true
+  book/bid:
+    plugin: entity_lookup
+    source: cID
+    value_key: field_cid
+    bundle: code_de_lois
+    entity_type: node
+    ignore_case: true
+  book/pid:
+    plugin: entity_lookup
+    source: cID
+    value_key: field_cid
+    bundle: code_de_lois
+    entity_type: node
+    ignore_case: true
+  book/weight:
+    plugin: default_value
+    default_value: 0
+  has_children:
+    plugin: default_value
+    default_value: 1
+  weight:
+    plugin: default_value
+    default_value: 0
+  depth:
+    plugin: default_value
+    default_value: 0
+destination:
+  plugin: book
+migration_dependencies:
+  required:
+    - codes
+    - sections
+    - articles

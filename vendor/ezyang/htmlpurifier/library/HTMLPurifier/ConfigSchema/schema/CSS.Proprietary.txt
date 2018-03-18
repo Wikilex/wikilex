@@ -1,0 +1,10 @@
+CSS.Proprietary
+TYPE: bool
+VERSION: 3.0.0
+DEFAULT: false
+--Projet pour une collaboration sur les textes de lois--
+
+<p>
+    Whether or not to allow safe, proprietary CSS values.
+</p>
+--# vim: et sw=4 sts=4

@@ -1,0 +1,19 @@
+uuid: fe8a1349-6700-45cf-b439-b2b160885f8c
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_etat
+    - node.type.article_de_lois
+id: node.article_de_lois.field_etat
+field_name: field_etat
+entity_type: node
+bundle: article_de_lois
+label: Etat
+description: 'L’état de l''article (abrogé, en vigueur, modifié, abrogé différé, etc).'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

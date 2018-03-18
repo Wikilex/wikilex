@@ -1,0 +1,15 @@
+# Ignore configuration files that may contain sensitive information.
+conf/drupal/local.php
+conf/drush/local.php
+www/sites/*/files
+www/sites/*/services*.yml
+
+# Sass and CSS
+www/themes/custom/*/stylesheets/
+
+# Import
+import
+drupal_private_files
+
+# SQL Dump
+*.sql

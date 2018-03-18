@@ -1,0 +1,21 @@
+uuid: 22767427-dc53-406a-baca-b69e8a86248e
+langcode: fr
+status: true
+dependencies:
+  module:
+    - book
+  theme:
+    - wikilex_theme
+id: navigationdulivre
+theme: wikilex_theme
+region: sidebar_first
+weight: -5
+provider: null
+plugin: book_navigation
+settings:
+  id: book_navigation
+  label: 'Navigation du code de lois'
+  provider: book
+  label_display: visible
+  block_mode: 'book pages'
+visibility: {  }

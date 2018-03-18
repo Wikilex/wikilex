@@ -1,0 +1,12 @@
+name: Migrate
+type: module
+description: Data Migration for Wikilex Project
+package: wikilex
+core: 8.x
+
+#dependencies:
+#  - drupal:migrate
+#  - migrate_plus:migrate_plus
+#  - drupal:menu_ui
+#  - drupal:path
+

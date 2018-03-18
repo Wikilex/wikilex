@@ -1,0 +1,9 @@
+uuid: 11c3beb3-8d32-4663-824c-a01cad73a318
+langcode: fr
+status: true
+dependencies: {  }
+name: 'Codes de lois'
+vid: codes_de_lois
+description: ''
+hierarchy: 0
+weight: 0

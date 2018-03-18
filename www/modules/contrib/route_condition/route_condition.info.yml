@@ -1,0 +1,10 @@
+name: 'Route Condition'
+type: module
+description: 'Provides a condition based on the active route.'
+# core: 8.x
+
+# Information added by Drupal.org packaging script on 2017-04-03
+version: '8.x-1.0-alpha2'
+core: '8.x'
+project: 'route_condition'
+datestamp: 1491214088

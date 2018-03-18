@@ -1,0 +1,20 @@
+uuid: 71247e2c-d71a-4893-8179-d31b3e734824
+langcode: fr
+status: true
+dependencies:
+  theme:
+    - wikilex_theme
+_core:
+  default_config_hash: 1TQP4b3ZnlzvIH9bj6cpCz_SyUHdJjLQkZnHpikjjhw
+id: wikilex_theme_page_title
+theme: wikilex_theme
+region: header
+weight: -5
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility: {  }

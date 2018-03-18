@@ -1,0 +1,12 @@
+name: Wikilex Migrate Tools
+type: module
+description: Custom Drush commands. Extends Migrate Tools.
+package: wikilex
+core: 8.x
+
+dependencies:
+  - drupal:migrate (>=8.3)
+  - migrate_plus:migrate_plus
+  - migrate_tools:migrate_tools
+
+

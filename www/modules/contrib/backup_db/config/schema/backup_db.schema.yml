@@ -1,0 +1,89 @@
+backup_db.settings:
+  type: mapping
+  label: 'Backup Database settings'
+  mapping:
+    filename:
+      type: string
+      label: 'Export filename'
+    path:
+      type: string
+      label: 'Export path'
+    date:
+      type: string
+      label: 'Export date format'
+    settings:
+      type: mapping
+      label: 'Mysqldump settings'
+      mapping:
+        include_tables:
+          type: array
+          label: 'Include tables'
+        exclude_tables:
+          type: array
+          label: 'Exclude tables'
+        compress:
+          type: string
+          label: 'Compress'
+        no_data:
+          type: boolean
+          label: 'No data'
+        add_drop_table:
+          type: boolean
+          label: 'Add drop table'
+        single_transaction:
+          type: boolean
+          label: 'Single transaction'
+        lock_tables:
+          type: boolean
+          label: 'Lock tables'
+        add_locks:
+          type: boolean
+          label: 'Add locks'
+        extended_insert:
+          type: boolean
+          label: 'Extended insert'
+        complete_insert:
+          type: boolean
+          label: 'Complete insert'
+        disable_keys:
+          type: boolean
+          label: 'Disable keys'
+        where:
+          type: string
+          label: ''
+        no_create_info:
+          type: boolean
+          label: 'No create info'
+        skip_triggers:
+          type: boolean
+          label: 'Skip triggers'
+        add_drop_trigger:
+          type: boolean
+          label: 'Add drop trigger'
+        routines:
+          type: boolean
+          label: 'Routines'
+        hex_blob:
+          type: boolean
+          label: 'Hex blob'
+        databases:
+          type: boolean
+          label: 'Databases'
+        add_drop_database:
+          type: boolean
+          label: 'Add drop database'
+        skip_tz_utc:
+          type: boolean
+          label: 'Skip tz UTC'
+        no_autocommit:
+          type: boolean
+          label: 'No autocommit'
+        default_character_set:
+          type: string
+          label: 'Default character set'
+        skip_comments:
+          type: boolean
+          label: 'Skip comments'
+        skip_dump_date:
+          type: boolean
+          label: 'Skip dump date'

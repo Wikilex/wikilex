@@ -1,0 +1,94 @@
+uuid: cca0c42d-6140-4aa0-b344-8930ba93a284
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.code_de_lois.field_cid
+    - field.field.node.code_de_lois.field_cle_legi
+    - field.field.node.code_de_lois.field_date_debut
+    - field.field.node.code_de_lois.field_date_fin
+    - field.field.node.code_de_lois.field_date_publi
+    - field.field.node.code_de_lois.field_derniere_modification
+    - field.field.node.code_de_lois.field_etat
+    - field.field.node.code_de_lois.field_nature
+    - node.type.code_de_lois
+  module:
+    - datetime
+    - user
+id: node.code_de_lois.full
+targetEntityType: node
+bundle: code_de_lois
+mode: full
+content:
+  field_cid:
+    weight: 1
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_cle_legi:
+    weight: 0
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_date_debut:
+    weight: 2
+    label: inline
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_date_fin:
+    weight: 3
+    label: inline
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_date_publi:
+    weight: 6
+    label: inline
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_derniere_modification:
+    weight: 7
+    label: inline
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_etat:
+    weight: 4
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_nature:
+    weight: 5
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  langcode: true
+  links: true

@@ -1,0 +1,22 @@
+uuid: 4d217c2e-55f5-4052-8a3c-32986806e26a
+langcode: fr
+status: true
+dependencies:
+  config:
+    - facets.facet.code_de_lois
+  module:
+    - facets
+  theme:
+    - wikilex_theme
+id: codedelois
+theme: wikilex_theme
+region: desactivated
+weight: -6
+provider: null
+plugin: 'facet_block:code_de_lois'
+settings:
+  id: 'facet_block:code_de_lois'
+  label: 'Code de lois'
+  provider: facets
+  label_display: visible
+visibility: {  }

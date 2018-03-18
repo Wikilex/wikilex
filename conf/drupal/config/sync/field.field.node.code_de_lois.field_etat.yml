@@ -1,0 +1,19 @@
+uuid: 7e0ef225-d9ac-487f-8506-569fe9cbb3b3
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_etat
+    - node.type.code_de_lois
+id: node.code_de_lois.field_etat
+field_name: field_etat
+entity_type: node
+bundle: code_de_lois
+label: Etat
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,17 @@
+name: Outline
+description: 'Organize entities in an outline.'
+package: Outline
+type: module
+core: 8.x
+dependencies:
+  - drupal:field
+  - drupal:file
+  - drupal:image
+  - drupal:node
+  - drupal:rest
+  - drupal:serialization
+  - drupal:text
+  - drupal:user
+  - drupal:views
+  - dynamic_entity_reference:dynamic_entity_reference
+configure: outline.settings

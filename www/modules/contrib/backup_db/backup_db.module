@@ -1,0 +1,115 @@
+<?php
+
+/**
+ * @file
+ * backup_db.module
+ */
+
+use Drupal\Core\StreamWrapper\PrivateStream;
+use Drupal\backup_db\Adapter\BackupDatabaseLocalAdapter;
+
+/**
+ * Inserts an export entry.
+ */
+function backup_db_history_insert($file) {
+  $connection = \Drupal\Core\Database\Database::getConnection();
+  return $connection->insert('backup_db')
+    ->fields(array('fid', 'name', 'uri', 'created'))
+    ->values(array(
+      'fid' => $file['fid'],
+      'name' => $file['name'],
+      'uri' => $file['uri'],
+      'created' => REQUEST_TIME
+    ))
+    ->execute();
+}
+
+/**
+ * Return export history entry.
+ */
+function backup_db_history_load($id) {
+  $connection = \Drupal\Core\Database\Database::getConnection();
+  return $connection->query('SELECT * FROM {backup_db} WHERE eid = :id', array(':id' => $id))->fetchAll();
+}
+
+/**
+ * Delete history entry.
+ */
+function backup_db_history_delete($id) {
+  // Remove backup_db entry.
+  // @todo, use injected db service.
+  db_delete('backup_db')
+    ->condition('fid', $id)
+    ->execute();
+
+  // Remove file and managed entry.
+  return file_delete($id);
+}
+
+/**
+ * Return list of all tables.
+ */
+function backup_db_show_tables() {
+  $connection = \Drupal\Core\Database\Database::getConnection();
+  return $connection->query('SHOW TABLES')->fetchAll();
+}
+
+/**
+ * file_create_url in combination with Url::fromUri does
+ * not return a correct path for private files.
+ */
+function backup_db_link($uri) {
+  $scheme = \Drupal::service('file_system')->uriScheme($uri);
+
+  $path = $uri;
+  if ($scheme == 'private') {
+    $private_path = PrivateStream::basePath();
+    $path = str_replace('private:/', $private_path, $uri);
+  }
+
+  return $path;
+}
+
+/**
+ * Format results as select list options.
+ */
+function _backup_db_format_options($results) {
+  $options = array();
+
+  foreach ($results as $result) {
+    $value = current((array)$result);
+    $options[$value] = $value;
+  }
+
+  return $options;
+}
+
+function backup_db_cron() {
+  $config = \Drupal::config('backup_db.settings');
+
+  if ($config->get('cron_backup_enabled')) {
+    $interval = (int) $config->get('cron_interval') * 60 * 60;
+
+    $expires = Drupal::state()->get('backup_db.cron_last_run') ? : REQUEST_TIME;
+    $next = Drupal::state()->get('backup_db.cron_next_backup') ? : $expires + $interval;
+
+    if (REQUEST_TIME > $next) {
+      $client = \Drupal::service('backup_db.client');
+
+      // Use the local adapter for cron export.
+      $handler = new BackupDatabaseLocalAdapter($client);
+      $handler->export();
+
+      /* @todo, error handler
+      if (!$backup->error()) {
+        drupal_set_message(t('Backup has been successfully completed.'), 'status');
+        Drupal::state()->set('backup_db.cron_next_backup', REQUEST_TIME + $interval);
+      }
+      else {
+        drupal_set_message(t('Backup has failed, please review recent log messages.'), 'warning');
+      }*/
+    }
+
+    Drupal::state()->set('backup_db.cron_last_run', REQUEST_TIME);
+  }
+}

@@ -1,0 +1,11 @@
+uuid: cd8c110e-ee7a-41d5-b890-afe8e5982311
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.article_de_lois
+id: node.article_de_lois
+target_entity_type_id: node
+target_bundle: article_de_lois
+default_langcode: site_default
+language_alterable: false

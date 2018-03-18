@@ -1,0 +1,11 @@
+uuid: 29f76cdb-4e3d-42a5-9c6e-738da32c95dc
+langcode: fr
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.codes_de_lois
+id: taxonomy_term.codes_de_lois
+target_entity_type_id: taxonomy_term
+target_bundle: codes_de_lois
+default_langcode: site_default
+language_alterable: false

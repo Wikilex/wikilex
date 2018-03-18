@@ -1,0 +1,17 @@
+entity.outline_entry.edit_form:
+  title: Edit
+  group: outline_entry
+  route_name: entity.outline_entry.edit_form
+  weight: 10
+
+entity.outline_entry.delete_form:
+  title: Delete
+  group: outline_entry
+  route_name: entity.outline_entry.delete_form
+  weight: 20
+
+entity.outline.delete_form:
+  title: Delete
+  group: outline
+  route_name: entity.outline.delete_form
+  weight: 20

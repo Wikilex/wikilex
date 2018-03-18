@@ -1,0 +1,44 @@
+uuid: 2ffb8395-4c97-478f-918c-8232de715e60
+langcode: fr
+status: true
+dependencies:
+  enforced:
+    module:
+      - migrate_plus
+      - migrate_tools
+      - wikilex_migrate
+_core:
+  default_config_hash: 96zGTtnQlPOV5W1P77q9mbPhysI0pknwybvYSyf0uSg
+id: articles
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: null
+migration_group: wikilex
+label: 'Import articles'
+source:
+  plugin: articles
+process:
+  type:
+    plugin: default_value
+    default_value: article_de_lois
+  title: title
+  field_cle_legi: id
+  field_ref_code_de_lois:
+    plugin: migration_lookup
+    migration: codes
+    source: cid
+  field_ref_sections:
+    plugin: migration_lookup
+    migration: sections
+    source: parent
+  body/value: bloc_textuel
+  body/format:
+    plugin: default_value
+    default_value: full_html
+destination:
+  plugin: 'entity:node'
+migration_dependencies:
+  required:
+    - codes
+    - sections

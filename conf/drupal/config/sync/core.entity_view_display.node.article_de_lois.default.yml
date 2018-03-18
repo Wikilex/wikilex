@@ -1,0 +1,63 @@
+uuid: 9f3b7d42-a3bf-49e8-8201-2bee99aba1d0
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.node.article_de_lois.body
+    - field.field.node.article_de_lois.field_cle_legi
+    - field.field.node.article_de_lois.field_code_de_lois
+    - field.field.node.article_de_lois.field_date_debut
+    - field.field.node.article_de_lois.field_date_fin
+    - field.field.node.article_de_lois.field_etat
+    - field.field.node.article_de_lois.field_hierarchie_legislative
+    - field.field.node.article_de_lois.field_monnaie_medailles_tags
+    - field.field.node.article_de_lois.field_nota
+    - field.field.node.article_de_lois.field_num
+    - field.field.node.article_de_lois.field_ref_code_de_lois
+    - field.field.node.article_de_lois.field_ref_sections
+    - field.field.node.article_de_lois.field_type
+    - node.type.article_de_lois
+  module:
+    - user
+id: node.article_de_lois.default
+targetEntityType: node
+bundle: article_de_lois
+mode: default
+content:
+  field_code_de_lois:
+    weight: 2
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_hierarchie_legislative:
+    weight: 1
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_monnaie_medailles_tags:
+    weight: 3
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+hidden:
+  body: true
+  field_cle_legi: true
+  field_date_debut: true
+  field_date_fin: true
+  field_etat: true
+  field_nota: true
+  field_num: true
+  field_ref_code_de_lois: true
+  field_ref_sections: true
+  field_type: true
+  langcode: true
+  links: true

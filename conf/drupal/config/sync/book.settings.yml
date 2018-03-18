@@ -1,0 +1,17 @@
+allowed_types:
+  - article_de_lois
+  - code_de_lois
+  - section
+block:
+  navigation:
+    mode: 'all pages'
+child_type: section
+_core:
+  default_config_hash: i-_2TVi6FUEAqBgNRJkt6aaYmiw1k_LTrXzJS6wlZ4U
+langcode: fr
+display_tree:
+  - code_de_lois
+  - section
+display_outline_links:
+  - article_de_lois
+  - section

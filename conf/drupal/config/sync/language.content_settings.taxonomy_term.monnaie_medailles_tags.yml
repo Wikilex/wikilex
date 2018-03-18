@@ -1,0 +1,11 @@
+uuid: 134ce207-a7f7-4138-813f-232bba655426
+langcode: fr
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.monnaie_medailles_tags
+id: taxonomy_term.monnaie_medailles_tags
+target_entity_type_id: taxonomy_term
+target_bundle: monnaie_medailles_tags
+default_langcode: site_default
+language_alterable: false

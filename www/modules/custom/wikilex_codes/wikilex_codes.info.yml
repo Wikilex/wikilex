@@ -1,0 +1,11 @@
+name: Wikilex Codes Manager
+type: module
+core: '8.x'
+package: YML Maker
+description: API + UI pour gérer les codes de lois.
+dependencies:
+  - taxonomy
+  - book
+  - views
+version: 1.0
+configure: wikilex_codes.admin_settings

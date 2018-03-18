@@ -1,0 +1,171 @@
+uuid: d0d2fb35-0972-4f35-b866-c053dcf10443
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.article_de_lois.body
+    - field.field.node.article_de_lois.field_cle_legi
+    - field.field.node.article_de_lois.field_code_de_lois
+    - field.field.node.article_de_lois.field_date_debut
+    - field.field.node.article_de_lois.field_date_fin
+    - field.field.node.article_de_lois.field_etat
+    - field.field.node.article_de_lois.field_hierarchie_legislative
+    - field.field.node.article_de_lois.field_monnaie_medailles_tags
+    - field.field.node.article_de_lois.field_nota
+    - field.field.node.article_de_lois.field_num
+    - field.field.node.article_de_lois.field_ref_code_de_lois
+    - field.field.node.article_de_lois.field_ref_sections
+    - field.field.node.article_de_lois.field_type
+    - node.type.article_de_lois
+  module:
+    - datetime
+    - field_group
+    - text
+    - user
+third_party_settings:
+  field_group:
+    group_metas_donnees:
+      children:
+        - field_nota
+        - field_cle_legi
+        - field_date_debut
+        - field_date_fin
+        - field_etat
+        - field_type
+        - field_num
+      parent_name: ''
+      weight: 20
+      format_type: details
+      format_settings:
+        label: 'Metas données de l''article'
+        id: ''
+        classes: meta-donnees-article
+        open: false
+      label: 'Metas données de l''article'
+    group_taxonomie:
+      children:
+        - field_code_de_lois
+        - field_hierarchie_legislative
+        - field_monnaie_medailles_tags
+      parent_name: ''
+      weight: 3
+      format_type: details
+      format_settings:
+        label: Taxonomie
+        id: ''
+        classes: taxonomie-collapsible
+        open: false
+      label: Taxonomie
+id: node.article_de_lois.full
+targetEntityType: node
+bundle: article_de_lois
+mode: full
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_cle_legi:
+    weight: 22
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_code_de_lois:
+    type: entity_reference_label
+    weight: 5
+    region: content
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+  field_date_debut:
+    weight: 23
+    label: inline
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_date_fin:
+    weight: 24
+    label: inline
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_etat:
+    weight: 25
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_hierarchie_legislative:
+    type: entity_reference_label
+    weight: 6
+    region: content
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+  field_monnaie_medailles_tags:
+    type: entity_reference_label
+    weight: 7
+    region: content
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+  field_nota:
+    weight: 21
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_num:
+    type: string
+    weight: 27
+    region: content
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_ref_code_de_lois:
+    weight: 1
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_ref_sections:
+    weight: 2
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_type:
+    weight: 26
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  langcode: true
+  links: true

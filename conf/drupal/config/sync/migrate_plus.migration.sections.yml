@@ -1,0 +1,40 @@
+uuid: 04395c6f-b461-4843-94bf-3dd2a46cf83e
+langcode: fr
+status: true
+dependencies:
+  enforced:
+    module:
+      - migrate_plus
+      - migrate_tools
+      - wikilex_migrate
+_core:
+  default_config_hash: OK1E8_gM1agtuoca2K0oYNSV16SBH6tWshtkoeIP2vw
+id: sections
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: null
+migration_group: wikilex
+label: 'Import sections'
+source:
+  plugin: sections
+process:
+  type:
+    plugin: default_value
+    default_value: section
+  title: titre_ta
+  field_cle_legi: id
+  field_ref_code_de_lois:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: cid
+    -
+      plugin: migration_lookup
+      migration: codes
+      source: cid
+destination:
+  plugin: 'entity:node'
+migration_dependencies:
+  required:
+    - codes

@@ -1,0 +1,22 @@
+uuid: 425e98c3-2184-47d8-9c21-328526b9bc18
+langcode: fr
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - wikilex_theme
+_core:
+  default_config_hash: 9RnnTUBcn0WRWXfrGOnId2H0Q31uQUeu_F5TnDxl2yg
+id: wikilex_theme_messages
+theme: wikilex_theme
+region: highlighted
+weight: -5
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

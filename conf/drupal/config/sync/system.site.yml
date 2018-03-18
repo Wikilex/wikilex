@@ -1,0 +1,14 @@
+uuid: e5a03b97-9395-4436-878a-eb6e5543ff07
+name: Wikilex
+mail: contact@wikilex.xyz
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /home
+admin_compact_mode: false
+weight_select_max: 100
+langcode: fr
+default_langcode: fr
+_core:
+  default_config_hash: yXadRE77Va-G6dxhd2kPYapAvbnSvTF6hO4oXiOEynI

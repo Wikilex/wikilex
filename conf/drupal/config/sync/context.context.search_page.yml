@@ -1,0 +1,37 @@
+uuid: e701b3c8-9ce2-4764-9f36-79ee40a37342
+langcode: fr
+status: true
+dependencies:
+  module:
+    - system
+name: search_page
+label: 'Search Page'
+group: null
+description: ''
+requireAllConditions: false
+disabled: false
+conditions:
+  request_path:
+    id: request_path
+    pages: '/recherche*'
+    negate: 0
+    uuid: eebd837a-8ce2-4944-ba09-6fa918f75f90
+    context_mapping: {  }
+reactions:
+  regions:
+    id: regions
+    regions:
+      bartik: {  }
+      classy: {  }
+      seven: {  }
+      stable: {  }
+      stark: {  }
+      adminimal_theme: {  }
+      bootstrap: {  }
+      wikilex_admin: {  }
+      wikilex_theme:
+        - sidebar_first
+        - sidebar_second
+    saved: false
+    uuid: 4bc48b45-019d-454b-835f-25acd6e6efe9
+weight: 0

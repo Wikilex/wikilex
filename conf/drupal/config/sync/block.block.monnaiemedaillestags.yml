@@ -1,0 +1,22 @@
+uuid: 97caa8fd-42a6-4ae7-a9ef-dc808015ba3c
+langcode: fr
+status: true
+dependencies:
+  config:
+    - facets.facet.monnaie_medailles_tags
+  module:
+    - facets
+  theme:
+    - wikilex_theme
+id: monnaiemedaillestags
+theme: wikilex_theme
+region: desactivated
+weight: -4
+provider: null
+plugin: 'facet_block:monnaie_medailles_tags'
+settings:
+  id: 'facet_block:monnaie_medailles_tags'
+  label: 'Monnaie Medailles tags'
+  provider: facets
+  label_display: visible
+visibility: {  }

@@ -1,0 +1,20 @@
+uuid: 7c0f7ccc-8cbc-4273-a15a-735c871a6988
+langcode: fr
+status: true
+dependencies: {  }
+id: contributeur
+label: Contributeur
+weight: -8
+is_admin: null
+permissions:
+  - 'access content overview'
+  - 'access toolbar'
+  - 'add content to books'
+  - 'administer book outlines'
+  - 'administer nodes'
+  - 'administer taxonomy'
+  - 'change own username'
+  - 'create new books'
+  - 'translate interface'
+  - 'use text format full_html'
+  - 'view the administration theme'

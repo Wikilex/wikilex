@@ -1,0 +1,11 @@
+{
+  "name": "drupal/backup_db",
+  "type": "drupal-module",
+  "description": "Provides database backup solutions via Drupal.",
+  "homepage": "http://drupal.org/project/backup_db",
+  "license": "GPL",
+  "require": {
+    "ifsnop/mysqldump-php": "dev-master"
+  },
+  "minimum-stability": "dev"
+}

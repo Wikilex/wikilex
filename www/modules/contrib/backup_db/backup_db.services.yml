@@ -1,0 +1,9 @@
+services:
+    backup_db.file:
+        class: Drupal\backup_db\BackupDatabaseFile
+    backup_db.handler:
+        class: Drupal\backup_db\BackupDatabaseFileHandler
+        arguments: ['@backup_db.file', '@file_system']
+    backup_db.client:
+        class: Drupal\backup_db\BackupDatabaseClient
+        arguments: ['@backup_db.handler', '@database', '@config.factory']

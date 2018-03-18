@@ -1,0 +1,27 @@
+uuid: 40cf3933-5c10-4c10-a438-f48417e0c4e7
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.article_de_lois
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    full_html: full_html
+    plain_text: plain_text
+id: node.article_de_lois.body
+field_name: body
+entity_type: node
+bundle: article_de_lois
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

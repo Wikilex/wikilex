@@ -1,0 +1,14 @@
+uuid: 32dfe63d-2f46-450a-b2b6-03390e77407a
+langcode: fr
+status: true
+dependencies: {  }
+name: 'Test outline'
+description: 'Test outline description'
+weight: 0
+render: '1'
+expand_levels: 1
+hide_name: false
+hide_site: false
+oid: test_outline
+root_entry_id: '1'
+site_entry_id: '2'

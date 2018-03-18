@@ -1,0 +1,22 @@
+uuid: 543775bf-98e8-4038-8b45-b1946e4c2f39
+langcode: fr
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - wikilex
+_core:
+  default_config_hash: 5MNdk3fpMKx_xxBTcz2T11DL4XEU1H5SgHl8BsYdFsA
+id: wikilex_messages
+theme: wikilex
+region: highlighted
+weight: 0
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Messages de statut'
+  provider: system
+  label_display: '0'
+visibility: {  }

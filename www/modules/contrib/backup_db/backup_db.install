@@ -1,0 +1,76 @@
+<?php
+
+/**
+ * @file
+ * backup_db.install
+ */
+
+/**
+ * Implements hook_requirements().
+ */
+function backup_db_requirements($phase) {
+  $requirements = [];
+
+  if ($phase == 'install') {
+    if (!class_exists('\Ifsnop\Mysqldump\Mysqldump')) {
+      $requirements['backup_db_mysqldump'] = [
+        'description' => t('Backup Database requires the Ifsnop\Mysqldump library, please read the readme.md and install via composer.'),
+        'severity' => REQUIREMENT_ERROR,
+      ];
+    }
+  }
+
+  return $requirements;
+}
+
+/**
+ * Implements hook_schema().
+ */
+function backup_db_schema() {
+  $schema['backup_db'] = array(
+    'description' => 'Tracks export creation and location.',
+    'fields' => array(
+      'eid' => array(
+        'description' => 'The export identifier.',
+        'type' => 'serial',
+        'not null' => TRUE,
+      ),
+      'fid' => array(
+        'description' => 'The referenced file id.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'name' => array(
+        'description' => 'The name of the export.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'uri' => array(
+        'description' => 'The uri of the export.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'created' => array(
+        'description' => 'The timestamp when the export was created.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+    ),
+    'primary key' => array('eid'),
+    'foreign keys' => array(
+      'file' => array(
+        'table' => 'file_managed',
+        'columns' => array('fid' => 'fid'),
+      ),
+    ),
+  );
+
+  return $schema;
+}

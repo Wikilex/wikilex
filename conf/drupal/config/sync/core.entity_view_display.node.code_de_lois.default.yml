@@ -1,0 +1,32 @@
+uuid: a965f834-c9df-4ea9-b6d6-ddde24de2ab4
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.node.code_de_lois.field_cid
+    - field.field.node.code_de_lois.field_cle_legi
+    - field.field.node.code_de_lois.field_date_debut
+    - field.field.node.code_de_lois.field_date_fin
+    - field.field.node.code_de_lois.field_date_publi
+    - field.field.node.code_de_lois.field_derniere_modification
+    - field.field.node.code_de_lois.field_etat
+    - field.field.node.code_de_lois.field_nature
+    - node.type.code_de_lois
+  module:
+    - user
+id: node.code_de_lois.default
+targetEntityType: node
+bundle: code_de_lois
+mode: default
+content: {  }
+hidden:
+  field_cid: true
+  field_cle_legi: true
+  field_date_debut: true
+  field_date_fin: true
+  field_date_publi: true
+  field_derniere_modification: true
+  field_etat: true
+  field_nature: true
+  langcode: true
+  links: true

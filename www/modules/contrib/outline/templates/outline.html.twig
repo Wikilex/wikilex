@@ -1,0 +1,68 @@
+{#
+/**
+ * @file
+ * Default theme implementation for an outline.
+ *
+ * Available variables
+ * - attributes: A list of HTML attributes for the wrapper element.
+ * - outline: The outline.
+ * - current_entry: The current entry.
+ *
+ * @see template_preprocess_outline()
+ *
+ * @ingroup themeable
+ */
+#}
+{{ attach_library('outline/drupal.outline') }}
+{{ attach_library('outline/drupal.outline.jstree') }}
+{{ attach_library('ckeditor/drupal.ckeditor') }}
+
+{% import _self as outline_template %}
+
+<div class="outline-container" style="display:flex;margin-top:20px">
+    <div class="tree-container" style="flex:2">
+        <ul>
+            <li class="outline jstree-open render-{{ outline.getRenderName }}"
+                outline-id="{{ outline.id }}"
+                entry-id="{{ outline.getRootEntry.id }}"
+                entry-type="root"
+                entry-site="1"
+                entity-id="{{ outline.getRootEntry.getCalcEntityId }}"
+                entity-type="{{ outline.getRootEntry.getCalcEntityType }}"
+                entity-mode="{{ outline.getRootEntry.getCalcEntityMode }}"
+                entity-display="{{ outline.getRootEntry.getCalcEntityDisplay }}"
+                entity-edit="{{  outline.getRootEntry.getCalcEntityEditUrl }}"
+                data-jstree="{'type':'outline'}">{{ outline.label }}{{ outline_template.outline_tree(outline.getTopLevelEntries()) }}
+            </li>
+        </ul>
+    </div>
+    <div class="entry-container" style="flex:6">
+    </div>
+</div>
+
+{% macro outline_tree(entries) %}
+    {% import _self as outline_template %}
+    {% if entries %}
+        <ul>
+            {% for entry in entries %}
+                {% if entry.getName != 'Root Entry' %}
+                    <li class="outline-entry type-{{ entry.getCalcEntityType }}"
+                        outline-id="{{ entry.getOutlineId }}"
+                        entry-id="{{ entry.id }}"
+                        entry-type="{{ entry.type }}"
+                        entry-site="{{ entry.isSite }}"
+                        entity-id="{{ entry.getCalcEntityId }}"
+                        entity-type="{{ entry.getCalcEntityType }}"
+                        entity-mode="{{ entry.getCalcEntityMode }}"
+                        entity-display="{{ entry.getCalcEntityDisplay }}"
+                        entity-edit="{{  entry.getCalcEntityEditUrl }}"
+                        data-jstree="{'type':'entry'}">{{ entry.getName }}
+                        {% if entry.getChildren %}
+                            {{ outline_template.outline_tree(entry.getChildren) }}
+                        {% endif %}
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endmacro %}

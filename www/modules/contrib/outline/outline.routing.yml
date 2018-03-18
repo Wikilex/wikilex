@@ -1,0 +1,126 @@
+# Outline routing definitions
+
+entity.outline.canonical:
+  path: '/outline/{outline}'
+  defaults:
+    _controller: '\Drupal\outline\Controller\OutlineController::outline' 
+    _title_callback: 'Drupal\outline\Controller\OutlineController::outlineTitle'
+  requirements:
+    _entity_access: 'outline.view'
+  options:
+    parameters:
+      entity:
+        type: entity:{outline}
+
+entity.outline.react:
+  path: '/outline-react/{outline}'
+  defaults:
+    _controller: '\Drupal\outline\Controller\OutlineController::outlineReact'
+    _title_callback: 'Drupal\outline\Controller\OutlineController::outlineTitle'
+  requirements:
+    _entity_access: 'outline.view'
+  options:
+    parameters:
+      entity:
+        type: entity:{outline}
+
+entity.outline.collection:
+  path: '/admin/content/outline'
+  defaults:
+    _entity_list: 'outline'
+    _title: 'Outlines'
+  requirements:
+    _permission: 'administer outlines'
+
+entity.outline.add_form:
+  path: '/outline/add'
+  defaults:
+    _entity_form: 'outline'
+    _title: 'Add outline'
+  requirements:
+    _entity_create_access: 'outline'
+
+entity.outline.edit_form:
+  path: '/outline/{outline}/edit'
+  defaults:
+    _entity_form: 'outline.default'
+    _title_callback: '\Drupal\outline\Controller\OutlineController::outlineTitle'
+  requirements:
+    _entity_access: 'outline.update'
+
+entity.outline.delete_form:
+  path: '/outline/{outline}/delete'
+  defaults:
+    _entity_form: 'outline.delete'
+    _title: 'Delete outline'
+  requirements:
+    _entity_access: 'outline.delete'
+
+### Outline Entry ###
+
+entity.outline_entry.add_form:
+  path: '/outline/{outline}/add'
+  defaults:
+    _controller: '\Drupal\outline\Controller\OutlineController::addForm'
+    _title: 'Add entry'
+  requirements:
+    _entity_create_access: 'outline_entry:{outline}'
+
+entity.outline_entry.edit_form:
+  path: '/outline/entry/{outline_entry}/edit'
+  defaults:
+    _entity_form: 'outline_entry.default'
+    _title: 'Edit entry'
+  requirements:
+    _entity_access: 'outline_entry.update'
+
+entity.outline_entry.delete_form:
+  path: '/outline/entry/{outline_entry}/delete'
+  defaults:
+    _entity_form: 'outline_entry.delete'
+    _title: 'Delete entry'
+  options:
+    _admin_route: TRUE
+  requirements:
+    _entity_access: 'outline_entry.delete'
+    outline_entry: \d+
+
+entity.outline_entry.canonical:
+  path: '/outline/entry/{outline_entry}'
+  defaults:
+    _entity_view: 'outline_entry.full'
+    _title: 'Outline entry'
+    _title_callback: '\Drupal\outline\Controller\OutlineController::entryTitle'
+  requirements:
+    _entity_access: 'outline_entry.view'
+    outline_entry: \d+
+
+### AJAX ###
+
+outline.renderEntry:
+  path: '/outline/render-entry/{type}/{id}/{render}/{mode}'
+  defaults:
+    _controller: '\Drupal\outline\Controller\OutlineController::renderEntry'
+  requirements:
+    _permission: 'administer outlines'
+
+outline.parentEntry:
+  path: '/outline/parent-entry/{id}/{parent_id}'
+  defaults:
+    _controller: '\Drupal\outline\Controller\OutlineController::parentEntry'
+  requirements:
+    _permission: 'administer outlines'
+
+outline.renameEntry:
+  path: '/outline/rename-entry/{id}/{name}'
+  defaults:
+    _controller: '\Drupal\outline\Controller\OutlineController::renameEntry'
+  requirements:
+    _permission: 'administer outlines'
+
+outline.deleteEntry:
+  path: '/outline/delete-entry/{id}'
+  defaults:
+    _controller: '\Drupal\outline\Controller\OutlineController::deleteEntry'
+  requirements:
+    _permission: 'administer outlines'

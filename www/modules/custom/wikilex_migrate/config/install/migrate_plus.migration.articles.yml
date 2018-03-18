@@ -1,0 +1,66 @@
+# Migration metadata
+id: articles
+label: "Import articles"
+migration_group: wikilex
+
+# Source plugin, id defined in the @MigrateSource annotation
+# in the src/Plugin/migrate/source/Articles.php file.
+# What are you migrating?
+source:
+  plugin: articles
+
+# Destination plugin
+# What do you want to create?
+destination:
+  plugin: entity:node
+
+# Process plugin
+# How are the different fields mapped?
+process:
+  # Node type (bundle)
+  type:
+    plugin: default_value
+    default_value: article_de_lois
+
+  # The default plugin is 'get' that simply copies values
+  # It can be shorthanded directly, but is stricly equivalent to
+  # title:
+  #   plugin: get
+  #   source: Title
+  title: title
+  field_cle_legi: id
+  field_ref_code_de_lois:
+    plugin: migration_lookup
+    migration: codes
+    source: cid
+  field_ref_sections:
+    plugin: migration_lookup
+    migration: sections
+    source: parent
+  body/value: bloc_textuel
+  body/format:
+    plugin: default_value
+    default_value: 'full_html'
+
+#Absolutely necessary (even if empty) if you don't want an error.
+# Our Articles nodes have references to Sections and Codes, so we want those to be
+# imported first. We make that dependency explicit here - by putting those
+# migrations under the 'required' key, we ensure that the tools will prevent
+# us from running the articles migration unless the sections and codes
+# migrations are complete (although we can override the dependency check by
+# passing --force to the drush migrate-import command). We can also add
+# 'optional' dependencies - these affect the order in which migrations are
+# displayed, and run by default, but does not force you run them in that
+# order.
+# The general rule of thumb is that any migrations referenced by migration
+# process plugins should be required here.
+migration_dependencies:
+  required:
+    - codes
+    - sections
+dependencies:
+  enforced:
+    module:
+      - migrate_plus
+      - migrate_tools
+      - wikilex_migrate

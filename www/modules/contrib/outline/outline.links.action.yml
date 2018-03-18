@@ -1,0 +1,30 @@
+entity.outline.add_form:
+  route_name: entity.outline.add_form
+  title: 'Add outline'
+  appears_on:
+    - entity.outline.collection
+    - entity.outline.canonical
+
+entity.outline.edit_form:
+  route_name: entity.outline.edit_form
+  title: 'Edit outline'
+  appears_on:
+    - entity.outline.canonical
+
+entity.outline.delete_form:
+  route_name: entity.outline.delete_form
+  title: 'Delete outline'
+  appears_on:
+    - entity.outline.canonical
+
+entity.outline_entry.add_form:
+  route_name: entity.outline_entry.add_form
+  title: 'Add entry'
+  appears_on:
+    - entity.outline.canonical
+
+entity.outline_entry.edit_form:
+  route_name: entity.outline_entry.edit_form
+  title: 'Edit entry'
+  appears_on:
+    - entity.outline.canonical

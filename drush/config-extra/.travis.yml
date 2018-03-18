@@ -1,0 +1,24 @@
+# Configuration for Travis CI
+language: php
+php:
+  - 5.5
+env:
+  - UNISH_DRUPAL_MAJOR_VERSION=8 UNISH_NO_TIMEOUTS=y UNISH_DB_URL=mysql://root:@127.0.0.1 DRUSH_VERSION=master PHPUNIT_ARGS=tests
+install:
+  # For now, do it like xendk did
+  - composer self-update
+  - export PATH="$HOME/drush:$PATH"
+  - export DRUSH_DIR=~/drush
+  - git clone https://github.com/drush-ops/drush.git $DRUSH_DIR
+  - cd $DRUSH_DIR
+  - git checkout $DRUSH_VERSION
+  # Install Drush composer dependencies
+  - composer install --prefer-source
+  - phpenv rehash
+  - cd -
+  # Install dependencies (phpunit).
+  - composer install --prefer-source
+before_script:
+  - echo "sendmail_path='true'" >> `php --ini | grep "Loaded Configuration" | awk '{print $4}'`
+  - export UNISH_DRUSH="${DRUSH_DIR}/drush"
+script: ${PWD}/runtests.sh $PHPUNIT_ARGS

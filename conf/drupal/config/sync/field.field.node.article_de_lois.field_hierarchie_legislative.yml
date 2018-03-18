@@ -1,0 +1,29 @@
+uuid: 01965f74-b11b-4260-bc25-5f42086e3ae6
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hierarchie_legislative
+    - node.type.article_de_lois
+    - taxonomy.vocabulary.hierarchie_legislative
+id: node.article_de_lois.field_hierarchie_legislative
+field_name: field_hierarchie_legislative
+entity_type: node
+bundle: article_de_lois
+label: 'Hiérarchie législative'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      hierarchie_legislative: hierarchie_legislative
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,54 @@
+<?php
+
+use \Drupal\node\Entity\Node;
+
+/**
+ * Implements hook_theme_registry_alter
+ */
+function wikilex_hook_book_theme_registry_alter(&$theme_registry) {
+  //d($theme_registry['book_navigation']);
+  $theme_registry['book_navigation']['path'] = drupal_get_path('module', 'wikilex_hook_book') . '/templates';
+
+
+}
+
+/**
+ * Prepares variables for book navigation templates.
+ *
+ * Default template: book-navigation.html.twig.
+ *
+ * @param array $variables
+ *   An associative array containing the following key:
+ *   - book_link: An associative array of book link properties.
+ *     Properties used: bid, link_title, depth, pid, nid.
+ */
+function wikilex_hook_book_preprocess_book_navigation(&$variables) {
+
+  $nid = $variables['book_link']['nid'];
+  $cid = '';
+  $node = Node::load($nid);
+  $bundle = $node->bundle();
+
+  $variables['display_tree'] = TRUE;
+  $settings = \Drupal::config('book.settings');
+  $display_tree = $settings->get('display_tree');
+  $display_outline_links = $settings->get('display_outline_links');
+
+  if (!in_array($bundle, $display_tree)) {
+    $variables['display_tree'] = FALSE;
+  }
+  if (!in_array($bundle, $display_outline_links)) {
+    $variables['has_links'] = FALSE;
+  }
+
+  if ($bundle == 'code_de_lois') {
+    $cid = $node->field_cid->value;
+  }
+  else {
+    if ($node->hasField('field_ref_code_de_lois')) {
+      $cid = $node->get('field_ref_code_de_lois')->entity->get('field_cid')->value;
+    }
+  }
+  $variables['cid'] = $cid;
+
+}

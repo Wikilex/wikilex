@@ -1,0 +1,22 @@
+uuid: 7dcc1791-e6e1-48b6-bd8b-8649aa442309
+langcode: fr
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - wikilex_admin
+_core:
+  default_config_hash: '-06BfQK8EYYd4KrNWlOi3HD-Tkcqz-g6JcExYrsEd4M'
+id: wikilex_admin_breadcrumbs
+theme: wikilex_admin
+region: breadcrumb
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility: {  }

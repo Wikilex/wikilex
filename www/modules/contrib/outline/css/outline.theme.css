@@ -1,0 +1,28 @@
+
+.outline-preview {
+  background-color: #eee;
+}
+.outline-entry-divider-top {
+  border-bottom: none;
+}
+.outline-entry-divider-bottom {
+  border-top: 1px dotted #ccc;
+}
+.tree-container a, .tree-container a.link {
+	border-bottom: none !important;
+}
+.tree-container li {
+  padding-top: 0 !important;
+}
+ul.jstree-container-ul > li > i.jstree-icon {
+  background-image: none;
+}
+li.jstree-node.outline > a .jstree-icon {
+  background:url("../images/icon-outline.gif") 0px 4px no-repeat !important;
+}
+li.jstree-node.outline-entry.type-node > a .jstree-icon {
+  background:url("../images/icon-node.png") 0px 4px no-repeat !important;
+}
+li.jstree-node.outline-entry.type-user > a .jstree-icon {
+  background:url("../images/icon-user.png") 0px 4px no-repeat !important;
+}

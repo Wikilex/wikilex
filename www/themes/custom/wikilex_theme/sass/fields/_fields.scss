@@ -1,0 +1,70 @@
+.form-wrapper.form-item.panel {
+  .panel-heading  {
+    a {
+      text-align: center;
+      color: white;
+      font-weight: bold;
+    }
+  }
+
+}
+.taxonomie-collapsible.form-wrapper.form-item.panel {
+  .panel-heading {
+    background-color: #079eff;
+  }
+  .panel-body {
+    border: 1px outset #079eff;
+  }
+  .field--type-entity-reference {
+    margin: 5px 10px;
+    .field--label {
+      padding-top: 5px;
+    }
+    .field--item{
+      display: inline-block;
+
+      a {
+        display: inline-block;
+        padding: 6px 12px;
+        margin-bottom: 0;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 1.42857143;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        -ms-touch-action: manipulation;
+        touch-action: manipulation;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        background-image: none;
+        border: 1px solid transparent;
+        border-radius: 4px;
+      }
+    }
+    &.field--name-field-code-de-lois a {
+      color: #fff;
+      background-color: #d9534f;
+      border-color: #d43f3a;
+    }
+    &.field--name-field-hierarchie-legislative a {
+      color: #fff;
+      background-color: #e2790d;
+      border-color: #e3790d;
+    }
+  }
+  .field--type-entity-reference[class*="-tags"] a {
+      color: #fff;
+      background-color: rgba(7, 133, 217, 0.81);
+      border-color: #aec5e6;
+    }
+}
+
+.meta-donnees-article.form-wrapper.form-item.panel {
+  .panel-heading {
+    background-color: rgba(46, 177, 31, 0.7);
+  }
+}

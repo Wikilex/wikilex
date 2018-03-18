@@ -1,0 +1,30 @@
+filename: ''
+path: 'public://backup_db'
+date: 'html_date'
+settings:
+  include_tables: []
+  exclude_tables: []
+  # Mysqldump::NONE
+  compress: 'None'
+  no_data: false
+  add_drop_table: false
+  single_transaction: true
+  lock_tables: true
+  add_locks: true
+  extended_insert: true
+  complete_insert: false
+  disable_keys: true
+  where: NULL
+  no_create_info: false
+  skip_triggers: false
+  add_drop_trigger: true
+  routines: false
+  hex_blob: true
+  databases: false
+  add_drop_database: false
+  skip_tz_utc: false
+  no_autocommit: true
+  # Mysqldump::UTF8
+  default_character_set: 'utf8'
+  skip_comments: false
+  skip_dump_date: false

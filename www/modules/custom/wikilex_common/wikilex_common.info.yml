@@ -1,0 +1,5 @@
+name: Common
+type: module
+description: Fonctions communes
+core: 8.x
+package: wikilex

@@ -1,0 +1,28 @@
+uuid: 932b57a5-38a1-4f23-accf-d6f867f6a14e
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ref_sections
+    - node.type.article_de_lois
+    - node.type.section
+id: node.article_de_lois.field_ref_sections
+field_name: field_ref_sections
+entity_type: node
+bundle: article_de_lois
+label: 'Référence Sections'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      section: section
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

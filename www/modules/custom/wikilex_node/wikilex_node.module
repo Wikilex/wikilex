@@ -1,0 +1,58 @@
+<?php
+
+/**
+ * @file
+ * Contains wikilex_node.module.
+ */
+
+use Drupal\wikilex_node\Entity\BaseNode;
+use Drupal\wikilex_node\NodeStorage;
+use Drupal\node\NodeInterface;
+
+/**
+ * Implements hook_entity_extra_field_info().
+ */
+function wikilex_node_entity_extra_field_info() {
+  $extra = [];
+
+  foreach (NodeStorage::BUNDLE_CLASSES as $type => $class) {
+    if (is_callable($class . '::getExtraFieldDefinitions')) {
+      $extra['node'][$type] = $class::getExtraFieldDefinitions();
+    }
+  }
+
+  return $extra;
+}
+
+/**
+ * Implements hook_entity_type_alter().
+ */
+function wikilex_node_entity_type_alter(array &$entity_types) {
+  if (isset($entity_types['node'])) {
+    $entity_types['node']->setClass(BaseNode::class);
+    $entity_types['node']->setStorageClass(NodeStorage::class);
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_view_alter().
+ */
+function wikilex_node_node_view_alter(array &$build, NodeInterface $entity, EntityViewDisplayInterface $display) {
+  // Le champ 'created' est supprimé par défaut par template_preprocess_node.
+  // Pour les view mode où on souhaite tout de même l'afficher, on en garde par
+  // conséquent une copie, qu'on re-injecte dans 'created' dans
+  // wikilex_common_preprocess_node.
+  if ($display->getComponent('created')) {
+    $build['wikilex_created'] = $build['created'];
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function wikilex_node_preprocess_node(&$variables) {
+  if (isset($variables['content']['wikilex_created'])) {
+    $variables['content']['created'] = $variables['content']['wikilex_created'];
+    unset($variables['content']['wikilex_created']);
+  }
+}

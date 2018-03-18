@@ -1,0 +1,50 @@
+uuid: 33ed6fb0-46f8-4a71-9ef7-e986a769e6fc
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.section.body
+    - field.field.node.section.field_cle_legi
+    - field.field.node.section.field_ref_code_de_lois
+    - field.field.node.section.field_ref_sections
+    - node.type.section
+  module:
+    - text
+    - user
+id: node.section.full
+targetEntityType: node
+bundle: section
+mode: full
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_cle_legi:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_ref_code_de_lois:
+    weight: 2
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  links:
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_ref_sections: true
+  langcode: true

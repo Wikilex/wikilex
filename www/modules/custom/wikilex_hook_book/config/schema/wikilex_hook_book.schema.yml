@@ -1,0 +1,16 @@
+# We want to extend the book.settings configuration
+wikilex_hook_book.settings:
+  mapping:
+    # Our first field name is 'display_tree'
+    display_tree:
+      type: sequence
+      label: 'Content types allowed to display the Outline Tree'
+      sequence:
+        type: string
+        label: 'Content type'
+    display_outline_links:
+      type: sequence
+      label: 'Content types allowed to display Outline Navigation links'
+      sequence:
+        type: string
+        label: 'Content type'

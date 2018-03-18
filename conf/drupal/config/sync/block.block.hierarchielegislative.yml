@@ -1,0 +1,22 @@
+uuid: 05416f27-b4ca-474d-9664-6a7dd4334e03
+langcode: fr
+status: true
+dependencies:
+  config:
+    - facets.facet.hierarchie_legislative
+  module:
+    - facets
+  theme:
+    - wikilex_theme
+id: hierarchielegislative
+theme: wikilex_theme
+region: desactivated
+weight: -5
+provider: null
+plugin: 'facet_block:hierarchie_legislative'
+settings:
+  id: 'facet_block:hierarchie_legislative'
+  label: 'Hiérarchie législative'
+  provider: facets
+  label_display: visible
+visibility: {  }
