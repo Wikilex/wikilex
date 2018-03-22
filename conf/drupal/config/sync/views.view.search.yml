@@ -45,8 +45,8 @@ display:
         type: basic
         options:
           submit_button: Rechercher
-          reset_button: false
-          reset_button_label: Reset
+          reset_button: true
+          reset_button_label: Réinitialiser
           exposed_sorts_label: 'Trié par'
           expose_sort_order: true
           sort_asc_label: Asc
@@ -583,7 +583,9 @@ display:
             group_items: {  }
           parse_mode: terms
           min_length: null
-          fields: {  }
+          fields:
+            body: body
+            field_nota: field_nota
           plugin_id: search_api_fulltext
       sorts: {  }
       header:
@@ -645,6 +647,7 @@ display:
       arguments: {  }
       display_extenders: {  }
       title: Recherche
+      use_ajax: false
     cache_metadata:
       max-age: 0
       contexts:
