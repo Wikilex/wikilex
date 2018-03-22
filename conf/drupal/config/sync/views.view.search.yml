@@ -593,7 +593,7 @@ display:
           field: entity_block
           relationship: none
           group_type: group
-          admin_label: ''
+          admin_label: code_de_lois
           empty: false
           tokenize: true
           target: codedelois
@@ -606,7 +606,7 @@ display:
           field: entity_block
           relationship: none
           group_type: group
-          admin_label: ''
+          admin_label: hierarchie_legislative
           empty: false
           tokenize: true
           target: hierarchielegislative
@@ -619,7 +619,7 @@ display:
           field: entity_block
           relationship: none
           group_type: group
-          admin_label: ''
+          admin_label: monnaie_medailles_tags
           empty: false
           tokenize: true
           target: monnaiemedaillestags
@@ -632,7 +632,7 @@ display:
           field: entity_block
           relationship: none
           group_type: group
-          admin_label: ''
+          admin_label: formulaire_expose_search_page_recherche
           empty: false
           tokenize: true
           target: formulaireexposesearchpage_recherche
