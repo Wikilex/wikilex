@@ -16,7 +16,7 @@ migration_group: wikilex
 label: 'Import codes'
 source:
   plugin: codes
-  cid: C_06070666
+  cid: C_06075116
 process:
   type:
     plugin: default_value

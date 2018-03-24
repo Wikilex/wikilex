@@ -20,7 +20,13 @@ class Sections extends SqlBase {
    * {@inheritdoc}
    */
   public function query() {
-    $query = $this->select('C_06070666_sections', 's')
+    $cid = 'C_06070666';
+    if (isset($this->configuration['cid'])) {
+      $cid = $this->configuration['cid'];
+      //d($this->configuration);
+      //drush_print_r($this->configuration);
+    }
+    $query = $this->select($cid . '_sections', 's')
       ->fields('s', array(
         'id',
         'cid',
@@ -60,12 +66,22 @@ class Sections extends SqlBase {
     ];
   }
 
+  /**
+   * {@inheritdoc}
+   */
   public function prepareRow(Row $row) {
-    //drush_print_r($row);
+    // Preparation for the Title.
+    $title = $row->getSourceProperty('titre_ta');
+    if (strlen($title) > 254) {
+      $title = substr($title,0, 254);
+    }
+    //$title = $title;
+    //$row->setSourceProperty('title', 'data');
+    $row->setSourceProperty('titre', $title);
     return parent::prepareRow($row);
   }
 
-  public function preprare(Node $node) {
+/*  public function preprare(Node $node) {
    // drush_print_r($node);
-  }
+  }*/
 }

@@ -18,6 +18,7 @@ migration_group: wikilex
 label: 'Import articles'
 source:
   plugin: articles
+  cid: C_06075116
 process:
   type:
     plugin: default_value
@@ -36,6 +37,14 @@ process:
   body/format:
     plugin: default_value
     default_value: full_html
+  field_nota/value: bloc_textuel
+  field_nota/format:
+    plugin: default_value
+    default_value: full_html
+  field_num: num
+  field_type: type
+  field_etat: etat
+  status: status
 destination:
   plugin: 'entity:node'
 migration_dependencies:

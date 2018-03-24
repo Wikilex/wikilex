@@ -1,8 +1,9 @@
 # Liste des choses à faire dans Wikilex
 
 ### Gestion des Types de Contenus
-* Creation des fields supplémentaires
-  * DONE.
+* Sections
+  * Titre trop longs pour certaines sections. Création d'un field titre entier, qu'il faudra afficher à la place du titre normal.
+  
 
 * Pour code de lois
  * Extrafield faisant une liste des sections et articles lui appartenant ?

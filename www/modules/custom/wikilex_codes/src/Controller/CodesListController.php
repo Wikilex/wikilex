@@ -21,6 +21,7 @@ class CodesListController extends ControllerBase {
    *  Render array for List output.
    */
   public function build() {
+
     $config = $this->config('wikilex_codes.manager');
     $codes = $config->get('codes');
     $content = array();

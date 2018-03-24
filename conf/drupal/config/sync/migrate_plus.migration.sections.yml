@@ -18,11 +18,13 @@ migration_group: wikilex
 label: 'Import sections'
 source:
   plugin: sections
+  cid: C_06075116
 process:
   type:
     plugin: default_value
     default_value: section
-  title: titre_ta
+  title: titre
+  field_titre_entier: titre_ta
   field_cle_legi: id
   field_ref_code_de_lois:
     -

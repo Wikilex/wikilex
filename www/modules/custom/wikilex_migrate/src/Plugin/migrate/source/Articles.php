@@ -19,7 +19,14 @@ class Articles extends SqlBase {
    * {@inheritdoc}
    */
   public function query() {
-    $query = $this->select('C_06070666_articles', 'a')
+    $cid = 'C_06070666';
+    if (isset($this->configuration['cid'])) {
+     $cid = $this->configuration['cid'];
+      //d($this->configuration);
+      //drush_print_r($this->configuration);
+    }
+
+    $query = $this->select($cid . '_articles', 'a')
       ->fields('a', array(
         'id',
         'cid',
@@ -46,7 +53,6 @@ class Articles extends SqlBase {
       'id' => $this->t('LEGI ARTICLE ID'),
       'cid' => $this->t('CODE ID'),
       'cid_full' => $this->t('LEGI CODE ID'),
-      'titre_ta' => $this->t('Titre'),
       'parent' => $this->t('Section Parent'),
       'bloc_textuel' => $this->t('Bloc Textuel'),
       'num' => $this->t('Num'),
@@ -80,9 +86,25 @@ class Articles extends SqlBase {
   public function prepareRow(Row $row) {
 
     // Preparation for the Title.
-    if ($value = $row->getSourceProperty('num')) {
-      $row->setSourceProperty('title', 'Article ' . $value);
+    $title = $row->getSourceProperty('id');
+    if ($num= $row->getSourceProperty('num')) {
+      $title = $num;
     }
+    $row->setSourceProperty('title', 'Article ' . $title);
+    // Preparation pour le status de publication
+    $status = 1;
+    if ($etat = $row->getSourceProperty('etat')) {
+      if ($etat == 'ABROGE' || $etat == 'MODIFIE_MORT_NE') {
+        $status = 0;
+      }
+    }
+    if ($date_fin = $row->getSourceProperty('date_fin')) {
+      $dateTime = date_create_from_format('Y-m-d', $date_fin);
+      if($dateTime < new \DateTime('NOW')) {
+        $status = 0;
+      }
+    }
+    $row->setSourceProperty('status', $status);
 
     return parent::prepareRow($row);
   }

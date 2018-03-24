@@ -1,0 +1,19 @@
+uuid: 1e258b2d-f8c2-453f-a108-493a31846601
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_titre_entier
+    - node.type.section
+id: node.section.field_titre_entier
+field_name: field_titre_entier
+entity_type: node
+bundle: section
+label: 'Titre entier'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long
