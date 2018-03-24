@@ -2,7 +2,7 @@ AutoFormat.RemoveEmpty.Predicate
 TYPE: hash
 VERSION: 4.7.0
 DEFAULT: array('colgroup' => array(), 'th' => array(), 'td' => array(), 'iframe' => array('src'))
---Projet pour une collaboration sur les textes de lois--
+--DESCRIPTION--
 <p>
   Given that an element has no contents, it will be removed by default, unless
   this predicate dictates otherwise.  The predicate can either be an associative

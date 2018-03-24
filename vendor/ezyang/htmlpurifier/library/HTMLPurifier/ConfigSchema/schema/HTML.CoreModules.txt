@@ -11,7 +11,7 @@ array (
   'XMLCommonAttributes' => true,
   'CommonAttributes' => true,
 )
---Projet pour une collaboration sur les textes de lois--
+--DESCRIPTION--
 
 <p>
     Certain modularized doctypes (XHTML, namely), have certain modules

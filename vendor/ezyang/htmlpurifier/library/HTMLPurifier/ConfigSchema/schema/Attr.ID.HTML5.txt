@@ -2,7 +2,7 @@ Attr.ID.HTML5
 TYPE: bool/null
 DEFAULT: null
 VERSION: 4.8.0
---Projet pour une collaboration sur les textes de lois--
+--DESCRIPTION--
 In HTML5, restrictions on the format of the id attribute have been significantly
 relaxed, such that any string is valid so long as it contains no spaces and
 is at least one character.  In lieu of a general HTML5 compatibility flag,

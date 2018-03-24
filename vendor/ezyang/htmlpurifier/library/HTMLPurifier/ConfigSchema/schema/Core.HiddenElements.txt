@@ -5,7 +5,7 @@ array (
   'script' => true,
   'style' => true,
 )
---Projet pour une collaboration sur les textes de lois--
+--DESCRIPTION--
 
 <p>
   This directive is a lookup array of elements which should have their

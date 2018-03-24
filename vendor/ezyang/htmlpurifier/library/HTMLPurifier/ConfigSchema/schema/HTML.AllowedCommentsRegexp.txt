@@ -2,7 +2,7 @@ HTML.AllowedCommentsRegexp
 TYPE: string/null
 VERSION: 4.4.0
 DEFAULT: NULL
---Projet pour une collaboration sur les textes de lois--
+--DESCRIPTION--
 A regexp, which if it matches the body of a comment, indicates that
 it should be allowed. Trailing and leading spaces are removed prior
 to running this regular expression.

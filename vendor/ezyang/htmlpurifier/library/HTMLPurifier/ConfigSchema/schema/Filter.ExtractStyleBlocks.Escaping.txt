@@ -3,7 +3,7 @@ TYPE: bool
 VERSION: 3.0.0
 DEFAULT: true
 ALIASES: Filter.ExtractStyleBlocksEscaping, FilterParam.ExtractStyleBlocksEscaping
---Projet pour une collaboration sur les textes de lois--
+--DESCRIPTION--
 
 <p>
   Whether or not to escape the dangerous characters &lt;, &gt; and &amp;

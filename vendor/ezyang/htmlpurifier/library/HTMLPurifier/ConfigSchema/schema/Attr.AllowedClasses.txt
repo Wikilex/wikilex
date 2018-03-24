@@ -2,7 +2,7 @@ Attr.AllowedClasses
 TYPE: lookup/null
 VERSION: 4.0.0
 DEFAULT: null
---Projet pour une collaboration sur les textes de lois--
+--DESCRIPTION--
 List of allowed class values in the class attribute. By default, this is null,
 which means all classes are allowed.
 --# vim: et sw=4 sts=4

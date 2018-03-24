@@ -2,7 +2,7 @@ Output.FixInnerHTML
 TYPE: bool
 VERSION: 4.3.0
 DEFAULT: true
---Projet pour une collaboration sur les textes de lois--
+--DESCRIPTION--
 <p>
   If true, HTML Purifier will protect against Internet Explorer's
   mishandling of the <code>innerHTML</code> attribute by appending

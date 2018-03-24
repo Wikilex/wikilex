@@ -44,13 +44,13 @@ if ($is_dev = (strpos($version, 'dev') === false)) {
 
 // ...in Doxyfile
 $doxyfile_c = preg_replace(
-    '/(?<=wikilex_NUMBER {9}= )[^\s]+/m', // brittle
+    '/(?<=PROJECT_NUMBER {9}= )[^\s]+/m', // brittle
     $version,
     file_get_contents('Doxyfile'),
     1, $c
 );
 if (!$c) {
-    echo 'Could not update Doxyfile, missing wikilex_NUMBER.' . PHP_EOL;
+    echo 'Could not update Doxyfile, missing PROJECT_NUMBER.' . PHP_EOL;
     exit;
 }
 file_put_contents('Doxyfile', $doxyfile_c);

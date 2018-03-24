@@ -2,7 +2,7 @@ CSS.AllowedProperties
 TYPE: lookup/null
 VERSION: 3.1.0
 DEFAULT: NULL
---Projet pour une collaboration sur les textes de lois--
+--DESCRIPTION--
 
 <p>
     If HTML Purifier's style attributes set is unsatisfactory for your needs,

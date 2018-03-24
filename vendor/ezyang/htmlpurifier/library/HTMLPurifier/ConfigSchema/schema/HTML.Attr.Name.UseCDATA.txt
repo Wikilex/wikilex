@@ -2,7 +2,7 @@ HTML.Attr.Name.UseCDATA
 TYPE: bool
 DEFAULT: false
 VERSION: 4.0.0
---Projet pour une collaboration sur les textes de lois--
+--DESCRIPTION--
 The W3C specification DTD defines the name attribute to be CDATA, not ID, due
 to limitations of DTD.  In certain documents, this relaxed behavior is desired,
 whether it is to specify duplicate names, or to specify names that would be

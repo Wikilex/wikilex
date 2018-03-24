@@ -4,13 +4,13 @@ description: 'Tool for syncing structural data that is stored as content.'
 configure: structure_sync.general.form
 dependencies:
   - drupal:taxonomy
-  - drupal:menu_link_content
+  - menu_link_content
   - drupal:block
 package: Structure
 type: module
 
-# Information added by Drupal.org packaging script on 2017-11-23
-version: '8.x-1.5'
+# Information added by Drupal.org packaging script on 2018-03-05
+version: '8.x-1.11'
 core: '8.x'
 project: 'structure_sync'
-datestamp: 1511449690
+datestamp: 1520240591

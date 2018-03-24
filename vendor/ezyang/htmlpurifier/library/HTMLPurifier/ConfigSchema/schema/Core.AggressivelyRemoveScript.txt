@@ -2,7 +2,7 @@ Core.AggressivelyRemoveScript
 TYPE: bool
 VERSION: 4.9.0
 DEFAULT: true
---Projet pour une collaboration sur les textes de lois--
+--DESCRIPTION--
 <p>
     This directive enables aggressive pre-filter removal of
     script tags.  This is not necessary for security,

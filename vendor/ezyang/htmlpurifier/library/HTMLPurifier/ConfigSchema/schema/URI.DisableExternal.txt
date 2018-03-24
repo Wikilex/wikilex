@@ -2,7 +2,7 @@ URI.DisableExternal
 TYPE: bool
 VERSION: 1.2.0
 DEFAULT: false
---Projet pour une collaboration sur les textes de lois--
+--DESCRIPTION--
 Disables links to external websites.  This is a highly effective anti-spam
 and anti-pagerank-leech measure, but comes at a hefty price: nolinks or
 images outside of your domain will be allowed.  Non-linkified URIs will

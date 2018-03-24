@@ -5,11 +5,11 @@ dependencies:
   module:
     - user
   theme:
-    - wikilex
+    - wikilex_theme
 _core:
   default_config_hash: 4QlSnWBcxxKMIFRM8sbu_MjSkcp3NjGgnVrc-lynQHI
 id: wikilex_login
-theme: wikilex
+theme: wikilex_theme
 region: sidebar_first
 weight: 0
 provider: null

@@ -2,7 +2,7 @@ Core.EnableIDNA
 TYPE: bool
 DEFAULT: false
 VERSION: 4.4.0
---Projet pour une collaboration sur les textes de lois--
+--DESCRIPTION--
 Allows international domain names in URLs.  This configuration option
 requires the PEAR Net_IDNA2 module to be installed.  It operates by
 punycoding any internationalized host names for maximum portability.

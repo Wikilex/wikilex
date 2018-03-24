@@ -2,7 +2,7 @@ Attr.IDPrefix
 TYPE: string
 VERSION: 1.2.0
 DEFAULT: ''
---Projet pour une collaboration sur les textes de lois--
+--DESCRIPTION--
 String to prefix to IDs.  If you have no idea what IDs your pages may use,
 you may opt to simply add a prefix to all user-submitted ID attributes so
 that they are still usable, but will not conflict with core page IDs.

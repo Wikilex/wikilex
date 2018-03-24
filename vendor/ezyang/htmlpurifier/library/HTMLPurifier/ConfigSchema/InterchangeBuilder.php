@@ -88,8 +88,8 @@ class HTMLPurifier_ConfigSchema_InterchangeBuilder
             throw new HTMLPurifier_ConfigSchema_Exception('Hash does not have any ID');
         }
         if (strpos($hash['ID'], '.') === false) {
-            if (count($hash) == 2 && isset($hash['Projet pour une collaboration sur les textes de lois'])) {
-                $hash->offsetGet('Projet pour une collaboration sur les textes de lois'); // prevent complaining
+            if (count($hash) == 2 && isset($hash['DESCRIPTION'])) {
+                $hash->offsetGet('DESCRIPTION'); // prevent complaining
             } else {
                 throw new HTMLPurifier_ConfigSchema_Exception('All directives must have a namespace');
             }
@@ -134,8 +134,8 @@ class HTMLPurifier_ConfigSchema_InterchangeBuilder
             }
         }
 
-        if (isset($hash['Projet pour une collaboration sur les textes de lois'])) {
-            $directive->description = $hash->offsetGet('Projet pour une collaboration sur les textes de lois');
+        if (isset($hash['DESCRIPTION'])) {
+            $directive->description = $hash->offsetGet('DESCRIPTION');
         }
 
         if (isset($hash['ALLOWED'])) {

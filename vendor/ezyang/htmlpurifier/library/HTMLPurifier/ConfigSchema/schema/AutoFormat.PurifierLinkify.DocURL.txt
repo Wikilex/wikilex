@@ -3,7 +3,7 @@ TYPE: string
 VERSION: 2.0.1
 DEFAULT: '#%s'
 ALIASES: AutoFormatParam.PurifierLinkifyDocURL
---Projet pour une collaboration sur les textes de lois--
+--DESCRIPTION--
 <p>
   Location of configuration documentation to link to, let %s substitute
   into the configuration's namespace and directive names sans the percent

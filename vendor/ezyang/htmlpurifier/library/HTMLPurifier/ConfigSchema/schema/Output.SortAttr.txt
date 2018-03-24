@@ -2,7 +2,7 @@ Output.SortAttr
 TYPE: bool
 VERSION: 3.2.0
 DEFAULT: false
---Projet pour une collaboration sur les textes de lois--
+--DESCRIPTION--
 <p>
   If true, HTML Purifier will sort attributes by name before writing them back
   to the document, converting a tag like: <code>&lt;el b="" a="" c="" /&gt;</code>

@@ -21,7 +21,7 @@ array (
   'silver' => '#C0C0C0',
   'gray' => '#808080',
 )
---Projet pour une collaboration sur les textes de lois--
+--DESCRIPTION--
 
 Lookup array of color names to six digit hexadecimal number corresponding
 to color, with preceding hash mark. Used when parsing colors.  The lookup

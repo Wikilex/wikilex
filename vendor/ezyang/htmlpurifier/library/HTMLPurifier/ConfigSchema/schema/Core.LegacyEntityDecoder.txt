@@ -2,7 +2,7 @@ Core.LegacyEntityDecoder
 TYPE: bool
 VERSION: 4.9.0
 DEFAULT: false
---Projet pour une collaboration sur les textes de lois--
+--DESCRIPTION--
 <p>
     Prior to HTML Purifier 4.9.0, entities were decoded by performing
     a global search replace for all entities whose decoded versions

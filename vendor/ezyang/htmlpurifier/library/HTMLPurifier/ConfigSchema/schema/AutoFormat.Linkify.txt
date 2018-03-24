@@ -2,7 +2,7 @@ AutoFormat.Linkify
 TYPE: bool
 VERSION: 2.0.1
 DEFAULT: false
---Projet pour une collaboration sur les textes de lois--
+--DESCRIPTION--
 
 <p>
   This directive turns on linkification, auto-linking http, ftp and

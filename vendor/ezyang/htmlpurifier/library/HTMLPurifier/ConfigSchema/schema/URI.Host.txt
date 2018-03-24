@@ -2,7 +2,7 @@ URI.Host
 TYPE: string/null
 VERSION: 1.2.0
 DEFAULT: NULL
---Projet pour une collaboration sur les textes de lois--
+--DESCRIPTION--
 
 <p>
     Defines the domain name of the server, so we can determine whether or

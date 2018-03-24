@@ -2,7 +2,7 @@ URI.SafeIframeRegexp
 TYPE: string/null
 VERSION: 4.4.0
 DEFAULT: NULL
---Projet pour une collaboration sur les textes de lois--
+--DESCRIPTION--
 <p>
     A PCRE regular expression that will be matched against an iframe URI.  This is
     a relatively inflexible scheme, but works well enough for the most common

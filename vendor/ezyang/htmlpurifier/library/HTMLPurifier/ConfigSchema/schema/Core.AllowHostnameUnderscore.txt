@@ -2,7 +2,7 @@ Core.AllowHostnameUnderscore
 TYPE: bool
 VERSION: 4.6.0
 DEFAULT: false
---Projet pour une collaboration sur les textes de lois--
+--DESCRIPTION--
 <p>
     By RFC 1123, underscores are not permitted in host names.
     (This is in contrast to the specification for DNS, RFC

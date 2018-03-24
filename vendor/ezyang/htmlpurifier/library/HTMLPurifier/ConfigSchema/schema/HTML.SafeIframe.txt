@@ -2,7 +2,7 @@ HTML.SafeIframe
 TYPE: bool
 VERSION: 4.4.0
 DEFAULT: false
---Projet pour une collaboration sur les textes de lois--
+--DESCRIPTION--
 <p>
     Whether or not to permit iframe tags in untrusted documents.  This
     directive must be accompanied by a whitelist of permitted iframes,

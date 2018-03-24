@@ -2,7 +2,7 @@ AutoFormat.PurifierLinkify
 TYPE: bool
 VERSION: 2.0.1
 DEFAULT: false
---Projet pour une collaboration sur les textes de lois--
+--DESCRIPTION--
 
 <p>
   Internal auto-formatter that converts configuration directives in

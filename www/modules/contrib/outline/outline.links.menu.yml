@@ -1,5 +1,0 @@
-entity.outline.collection:
-  title: Outlines
-  route_name: entity.outline.collection
-  parent: site.admin_content
-  description: 'Create outlines of entities.'

@@ -2,7 +2,7 @@ Output.FlashCompat
 TYPE: bool
 VERSION: 4.1.0
 DEFAULT: false
---Projet pour une collaboration sur les textes de lois--
+--DESCRIPTION--
 <p>
   If true, HTML Purifier will generate Internet Explorer compatibility
   code for all object code.  This is highly recommended if you enable

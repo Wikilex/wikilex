@@ -72,6 +72,7 @@ class MenuLinksController extends ControllerBase {
         'weight' => $menuLink->weight->getValue()[0]['value'],
         'langcode' => $menuLink->langcode->getValue()[0]['value'],
         'uuid' => $menuLink->uuid(),
+        'attributes' => !empty($menuLink->link->getValue()[0]['options']['attributes']) ? $menuLink->link->getValue()[0]['options']['attributes'] : NULL,
       ];
 
       if (array_key_exists('drush', $form) && $form['drush'] === TRUE) {
@@ -221,13 +222,15 @@ class MenuLinksController extends ControllerBase {
       $uuidsInConfig[] = $menuLink['uuid'];
     }
 
-    $query = StructureSyncHelper::getEntityQuery('menu_link_content');
-    $query->condition('uuid', $uuidsInConfig, 'NOT IN');
-    $ids = $query->execute();
-    $controller = StructureSyncHelper::getEntityManager()
-      ->getStorage('menu_link_content');
-    $entities = $controller->loadMultiple($ids);
-    $controller->delete($entities);
+    if(!empty($uuidsInConfig)) {
+      $query = StructureSyncHelper::getEntityQuery('menu_link_content');
+      $query->condition('uuid', $uuidsInConfig, 'NOT IN');
+      $ids = $query->execute();
+      $controller = StructureSyncHelper::getEntityManager()
+        ->getStorage('menu_link_content');
+      $entities = $controller->loadMultiple($ids);
+      $controller->delete($entities);
+    }
 
     if (array_key_exists('drush', $context) && $context['drush'] === TRUE) {
       drush_log('Deleted menu links that were not in config', 'ok');
@@ -246,13 +249,15 @@ class MenuLinksController extends ControllerBase {
     foreach ($menus as $menuLink) {
       $uuidsInConfig[] = $menuLink['uuid'];
     }
-
-    $query = StructureSyncHelper::getEntityQuery('menu_link_content');
-    $query->condition('uuid', $uuidsInConfig, 'IN');
-    $ids = $query->execute();
-    $controller = StructureSyncHelper::getEntityManager()
-      ->getStorage('menu_link_content');
-    $entities = $controller->loadMultiple($ids);
+    $entities = [];
+    if(!empty($uuidsInConfig)) {
+      $query = StructureSyncHelper::getEntityQuery('menu_link_content');
+      $query->condition('uuid', $uuidsInConfig, 'IN');
+      $ids = $query->execute();
+      $controller = StructureSyncHelper::getEntityManager()
+        ->getStorage('menu_link_content');
+      $entities = $controller->loadMultiple($ids);
+    }
 
     $parents = array_column($menus, 'parent');
     foreach ($parents as &$parent) {
@@ -295,6 +300,7 @@ class MenuLinksController extends ControllerBase {
               'link' => [
                 'uri' => $menuLink['uri'],
                 'title' => $menuLink['link_title'],
+                'options' => !empty($menuLink['attributes']) ? ['attributes' => $menuLink['attributes']] : NULL,
               ],
               'menu_name' => $menuLink['menu_name'],
               'expanded' => $menuLink['expanded'] === '1' ? TRUE : FALSE,
@@ -316,6 +322,7 @@ class MenuLinksController extends ControllerBase {
                     ->set('link', [
                       'uri' => $menuLink['uri'],
                       'title' => $menuLink['link_title'],
+                      'options' => !empty($menuLink['attributes']) ? ['attributes' => $menuLink['attributes']] : NULL,
                     ])
                     ->set('expanded', $menuLink['expanded'] === '1' ? TRUE : FALSE)
                     ->set('enabled', $menuLink['enabled'] === '1' ? TRUE : FALSE)
@@ -381,6 +388,7 @@ class MenuLinksController extends ControllerBase {
         'link' => [
           'uri' => $menuLink['uri'],
           'title' => $menuLink['link_title'],
+          'options' => !empty($menuLink['attributes']) ? ['attributes' => $menuLink['attributes']] : NULL,
         ],
         'menu_name' => $menuLink['menu_name'],
         'expanded' => $menuLink['expanded'] === '1' ? TRUE : FALSE,
@@ -426,6 +434,7 @@ class MenuLinksController extends ControllerBase {
         'link' => [
           'uri' => $menuLink['uri'],
           'title' => $menuLink['link_title'],
+          'options' => !empty($menuLink['attributes']) ? ['attributes' => $menuLink['attributes']] : NULL,
         ],
         'menu_name' => $menuLink['menu_name'],
         'expanded' => $menuLink['expanded'] === '1' ? TRUE : FALSE,

@@ -1,9 +1,0 @@
-langcode: en
-status: true
-dependencies:
-  module:
-    - outline
-id: entry.full
-label: 'Outline entry'
-targetEntityType: outline_entry
-cache: true

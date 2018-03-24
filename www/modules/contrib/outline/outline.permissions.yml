@@ -1,5 +1,0 @@
-administer outlines:
-  title: 'Administer outlines'
-
-permission_callbacks:
-  - Drupal\outline\OutlinePermissions::permissions

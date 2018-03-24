@@ -2,7 +2,7 @@ HTML.SafeScripting
 TYPE: lookup
 VERSION: 4.5.0
 DEFAULT: array()
---Projet pour une collaboration sur les textes de lois--
+--DESCRIPTION--
 <p>
     Whether or not to permit script tags to external scripts in documents.
     Inline scripting is not allowed, and the script must match an explicit whitelist.

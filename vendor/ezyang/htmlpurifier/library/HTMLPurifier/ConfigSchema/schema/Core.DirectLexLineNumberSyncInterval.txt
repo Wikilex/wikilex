@@ -2,7 +2,7 @@ Core.DirectLexLineNumberSyncInterval
 TYPE: int
 VERSION: 2.0.0
 DEFAULT: 0
---Projet pour une collaboration sur les textes de lois--
+--DESCRIPTION--
 
 <p>
   Specifies the number of tokens the DirectLex line number tracking

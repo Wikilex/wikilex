@@ -2,7 +2,7 @@ HTML.AllowedAttributes
 TYPE: lookup/null
 VERSION: 1.3.0
 DEFAULT: NULL
---Projet pour une collaboration sur les textes de lois--
+--DESCRIPTION--
 
 <p>
     If HTML Purifier's attribute set is unsatisfactory, overload it!

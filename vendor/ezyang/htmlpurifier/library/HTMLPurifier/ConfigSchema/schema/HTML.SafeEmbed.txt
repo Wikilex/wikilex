@@ -2,7 +2,7 @@ HTML.SafeEmbed
 TYPE: bool
 VERSION: 3.1.1
 DEFAULT: false
---Projet pour une collaboration sur les textes de lois--
+--DESCRIPTION--
 <p>
     Whether or not to permit embed tags in documents, with a number of extra
     security features added to prevent script execution. This is similar to

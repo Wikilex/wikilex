@@ -2,7 +2,7 @@ HTML.TargetNoreferrer
 TYPE: bool
 VERSION: 4.8.0
 DEFAULT: TRUE
---Projet pour une collaboration sur les textes de lois--
+--DESCRIPTION--
 If enabled, noreferrer rel attributes are added to links which have
 a target attribute associated with them.  This prevents malicious
 destinations from overwriting the original window.

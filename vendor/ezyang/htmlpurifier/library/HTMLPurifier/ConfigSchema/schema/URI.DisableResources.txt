@@ -2,7 +2,7 @@ URI.DisableResources
 TYPE: bool
 VERSION: 4.2.0
 DEFAULT: false
---Projet pour une collaboration sur les textes de lois--
+--DESCRIPTION--
 <p>
     Disables embedding resources, essentially meaning no pictures. You can
     still link to them though. See %URI.DisableExternalResources for why

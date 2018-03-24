@@ -2,7 +2,7 @@ CSS.AllowedFonts
 TYPE: lookup/null
 VERSION: 4.3.0
 DEFAULT: NULL
---Projet pour une collaboration sur les textes de lois--
+--DESCRIPTION--
 <p>
     Allows you to manually specify a set of allowed fonts.  If
     <code>NULL</code>, all fonts are allowed.  This directive

@@ -2,7 +2,7 @@ Core.LexerImpl
 TYPE: mixed/null
 VERSION: 2.0.0
 DEFAULT: NULL
---Projet pour une collaboration sur les textes de lois--
+--DESCRIPTION--
 
 <p>
   This parameter determines what lexer implementation can be used. The

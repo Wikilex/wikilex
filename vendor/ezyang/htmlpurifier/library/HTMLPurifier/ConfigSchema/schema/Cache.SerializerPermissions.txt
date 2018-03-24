@@ -2,7 +2,7 @@ Cache.SerializerPermissions
 TYPE: int/null
 VERSION: 4.3.0
 DEFAULT: 0755
---Projet pour une collaboration sur les textes de lois--
+--DESCRIPTION--
 
 <p>
     Directory permissions of the files and directories created inside

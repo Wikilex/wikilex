@@ -2,7 +2,7 @@ HTML.ForbiddenAttributes
 TYPE: lookup
 VERSION: 3.1.0
 DEFAULT: array()
---Projet pour une collaboration sur les textes de lois--
+--DESCRIPTION--
 <p>
     While this directive is similar to %HTML.AllowedAttributes, for
     forwards-compatibility with XML, this attribute has a different syntax. Instead of

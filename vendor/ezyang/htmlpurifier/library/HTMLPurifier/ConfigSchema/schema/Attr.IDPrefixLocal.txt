@@ -2,7 +2,7 @@ Attr.IDPrefixLocal
 TYPE: string
 VERSION: 1.2.0
 DEFAULT: ''
---Projet pour une collaboration sur les textes de lois--
+--DESCRIPTION--
 Temporary prefix for IDs used in conjunction with %Attr.IDPrefix.  If you
 need to allow multiple sets of user content on web page, you may need to
 have a seperate prefix that changes with each iteration.  This way,

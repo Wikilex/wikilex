@@ -232,13 +232,15 @@ class BlocksController extends ControllerBase {
       $uuidsInConfig[] = $block['uuid'];
     }
 
-    $query = StructureSyncHelper::getEntityQuery('block_content');
-    $query->condition('uuid', $uuidsInConfig, 'NOT IN');
-    $ids = $query->execute();
-    $controller = StructureSyncHelper::getEntityManager()
-      ->getStorage('block_content');
-    $entities = $controller->loadMultiple($ids);
-    $controller->delete($entities);
+    if(!empty($uuidsInConfig)) {
+        $query = StructureSyncHelper::getEntityQuery('block_content');
+        $query->condition('uuid', $uuidsInConfig, 'NOT IN');
+        $ids = $query->execute();
+        $controller = StructureSyncHelper::getEntityManager()
+            ->getStorage('block_content');
+        $entities = $controller->loadMultiple($ids);
+        $controller->delete($entities);
+    }
 
     if (array_key_exists('drush', $context) && $context['drush'] === TRUE) {
       drush_log('Deleted custom blocks that were not in config', 'ok');
@@ -258,12 +260,15 @@ class BlocksController extends ControllerBase {
       $uuidsInConfig[] = $block['uuid'];
     }
 
-    $query = StructureSyncHelper::getEntityQuery('block_content');
-    $query->condition('uuid', $uuidsInConfig, 'IN');
-    $ids = $query->execute();
-    $controller = StructureSyncHelper::getEntityManager()
-      ->getStorage('block_content');
-    $entities = $controller->loadMultiple($ids);
+    $entities = [];
+    if(!empty($uuidsInConfig)) {
+        $query = StructureSyncHelper::getEntityQuery('block_content');
+        $query->condition('uuid', $uuidsInConfig, 'IN');
+        $ids = $query->execute();
+        $controller = StructureSyncHelper::getEntityManager()
+            ->getStorage('block_content');
+        $entities = $controller->loadMultiple($ids);
+    }
 
     $context['sandbox']['max'] = count($blocks);
     $context['sandbox']['progress'] = 0;

@@ -2,7 +2,7 @@ CSS.ForbiddenProperties
 TYPE: lookup
 VERSION: 4.2.0
 DEFAULT: array()
---Projet pour une collaboration sur les textes de lois--
+--DESCRIPTION--
 <p>
     This is the logical inverse of %CSS.AllowedProperties, and it will
     override that directive or any other directive.  If possible,

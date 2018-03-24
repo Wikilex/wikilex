@@ -2,7 +2,7 @@ HTML.TidyLevel
 TYPE: string
 VERSION: 2.0.0
 DEFAULT: 'medium'
---Projet pour une collaboration sur les textes de lois--
+--DESCRIPTION--
 
 <p>General level of cleanliness the Tidy module should enforce.
 There are four allowed values:</p>

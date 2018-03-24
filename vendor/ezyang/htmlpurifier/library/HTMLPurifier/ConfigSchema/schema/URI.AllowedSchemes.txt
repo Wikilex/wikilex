@@ -10,7 +10,7 @@ array (
   'news' => true,
   'tel' => true,
 )
---Projet pour une collaboration sur les textes de lois--
+--DESCRIPTION--
 Whitelist that defines the schemes that a URI is allowed to have.  This
 prevents XSS attacks from using pseudo-schemes like javascript or mocha.
 There is also support for the <code>data</code> and <code>file</code>

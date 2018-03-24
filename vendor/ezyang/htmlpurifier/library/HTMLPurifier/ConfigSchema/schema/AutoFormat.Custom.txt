@@ -2,7 +2,7 @@ AutoFormat.Custom
 TYPE: list
 VERSION: 2.0.1
 DEFAULT: array()
---Projet pour une collaboration sur les textes de lois--
+--DESCRIPTION--
 
 <p>
   This directive can be used to add custom auto-format injectors.

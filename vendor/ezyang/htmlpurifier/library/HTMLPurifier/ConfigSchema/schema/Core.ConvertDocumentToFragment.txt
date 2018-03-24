@@ -1,7 +1,7 @@
 Core.ConvertDocumentToFragment
 TYPE: bool
 DEFAULT: true
---Projet pour une collaboration sur les textes de lois--
+--DESCRIPTION--
 
 This parameter determines whether or not the filter should convert
 input that is a full document with html and body tags to a fragment

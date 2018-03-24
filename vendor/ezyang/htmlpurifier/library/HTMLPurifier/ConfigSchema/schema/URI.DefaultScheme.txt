@@ -1,7 +1,7 @@
 URI.DefaultScheme
 TYPE: string/null
 DEFAULT: 'http'
---Projet pour une collaboration sur les textes de lois--
+--DESCRIPTION--
 
 <p>
     Defines through what scheme the output will be served, in order to

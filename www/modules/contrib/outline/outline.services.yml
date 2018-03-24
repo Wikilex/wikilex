@@ -1,6 +1,0 @@
-services:
-  outline_entry.breadcrumb:
-    class: Drupal\outline\EntryBreadcrumbBuilder
-    arguments: ['@entity.manager']
-    tags:
-      - { name: breadcrumb_builder, priority: 1002 }

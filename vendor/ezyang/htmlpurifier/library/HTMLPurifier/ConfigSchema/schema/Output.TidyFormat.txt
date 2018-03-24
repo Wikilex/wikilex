@@ -2,7 +2,7 @@ Output.TidyFormat
 TYPE: bool
 VERSION: 1.1.1
 DEFAULT: false
---Projet pour une collaboration sur les textes de lois--
+--DESCRIPTION--
 <p>
     Determines whether or not to run Tidy on the final output for pretty
     formatting reasons, such as indentation and wrap.

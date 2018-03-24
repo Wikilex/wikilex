@@ -2,7 +2,7 @@ HTML.DefinitionID
 TYPE: string/null
 DEFAULT: NULL
 VERSION: 2.0.0
---Projet pour une collaboration sur les textes de lois--
+--DESCRIPTION--
 
 <p>
     Unique identifier for a custom-built HTML definition. If you edit

@@ -4,7 +4,7 @@ DEFAULT: true
 VERSION: 1.1.0
 DEPRECATED-VERSION: 1.7.0
 DEPRECATED-USE: HTML.Doctype
---Projet pour une collaboration sur les textes de lois--
+--DESCRIPTION--
 Determines whether or not output is XHTML 1.0 or HTML 4.01 flavor.
 --ALIASES--
 Core.XHTML

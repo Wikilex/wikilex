@@ -7,11 +7,11 @@ dependencies:
   module:
     - system
   theme:
-    - wikilex
+    - wikilex_admin
 _core:
   default_config_hash: DWAB7HaAfAJerAmyT8B2K-6qxicu9n0PcKVpDr--N4c
 id: wikilex_admin
-theme: wikilex
+theme: wikilex_admin
 region: sidebar_first
 weight: 1
 provider: null

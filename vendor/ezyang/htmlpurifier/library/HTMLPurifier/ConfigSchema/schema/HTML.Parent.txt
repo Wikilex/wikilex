@@ -2,7 +2,7 @@ HTML.Parent
 TYPE: string
 VERSION: 1.3.0
 DEFAULT: 'div'
---Projet pour une collaboration sur les textes de lois--
+--DESCRIPTION--
 
 <p>
     String name of element that HTML fragment passed to library will be

@@ -2,7 +2,7 @@ Cache.SerializerPath
 TYPE: string/null
 VERSION: 2.0.0
 DEFAULT: NULL
---Projet pour une collaboration sur les textes de lois--
+--DESCRIPTION--
 
 <p>
     Absolute path with no trailing slash to store serialized definitions in.

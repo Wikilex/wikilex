@@ -1,7 +1,7 @@
 Core.EscapeInvalidChildren
 TYPE: bool
 DEFAULT: false
---Projet pour une collaboration sur les textes de lois--
+--DESCRIPTION--
 <p><strong>Warning:</strong> this configuration option is no longer does anything as of 4.6.0.</p>
 
 <p>When true, a child is found that is not allowed in the context of the

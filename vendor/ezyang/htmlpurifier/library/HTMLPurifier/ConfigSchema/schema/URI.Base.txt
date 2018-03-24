@@ -2,7 +2,7 @@ URI.Base
 TYPE: string/null
 VERSION: 2.1.0
 DEFAULT: NULL
---Projet pour une collaboration sur les textes de lois--
+--DESCRIPTION--
 
 <p>
     The base URI is the URI of the document this purified HTML will be

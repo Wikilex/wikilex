@@ -2,7 +2,7 @@ Attr.ClassUseCDATA
 TYPE: bool/null
 DEFAULT: null
 VERSION: 4.0.0
---Projet pour une collaboration sur les textes de lois--
+--DESCRIPTION--
 If null, class will auto-detect the doctype and, if matching XHTML 1.1 or
 XHTML 2.0, will use the restrictive NMTOKENS specification of class. Otherwise,
 it will use a relaxed CDATA definition.  If true, the relaxed CDATA definition

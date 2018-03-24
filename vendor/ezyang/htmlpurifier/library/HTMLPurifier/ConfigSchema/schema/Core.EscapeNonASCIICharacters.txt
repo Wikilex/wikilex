@@ -2,7 +2,7 @@ Core.EscapeNonASCIICharacters
 TYPE: bool
 VERSION: 1.4.0
 DEFAULT: false
---Projet pour une collaboration sur les textes de lois--
+--DESCRIPTION--
 This directive overcomes a deficiency in %Core.Encoding by blindly
 converting all non-ASCII characters into decimal numeric entities before
 converting it to its native encoding. This means that even characters that

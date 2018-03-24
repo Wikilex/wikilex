@@ -2,7 +2,7 @@ HTML.CustomDoctype
 TYPE: string/null
 VERSION: 2.0.1
 DEFAULT: NULL
---Projet pour une collaboration sur les textes de lois--
+--DESCRIPTION--
 
 A custom doctype for power-users who defined their own document
 type. This directive only applies when %HTML.Doctype is blank.

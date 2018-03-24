@@ -2,7 +2,7 @@ AutoFormat.RemoveEmpty
 TYPE: bool
 VERSION: 3.2.0
 DEFAULT: false
---Projet pour une collaboration sur les textes de lois--
+--DESCRIPTION--
 <p>
   When enabled, HTML Purifier will attempt to remove empty elements that
   contribute no semantic information to the document. The following types

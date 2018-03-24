@@ -2,7 +2,7 @@ AutoFormat.RemoveEmpty.RemoveNbsp.Exceptions
 TYPE: lookup
 VERSION: 4.0.0
 DEFAULT: array('td' => true, 'th' => true)
---Projet pour une collaboration sur les textes de lois--
+--DESCRIPTION--
 <p>
   When %AutoFormat.RemoveEmpty and %AutoFormat.RemoveEmpty.RemoveNbsp
   are enabled, this directive defines what HTML elements should not be

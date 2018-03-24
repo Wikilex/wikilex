@@ -246,13 +246,15 @@ class TaxonomiesController extends ControllerBase {
       }
     }
 
-    $query = StructureSyncHelper::getEntityQuery('taxonomy_term');
-    $query->condition('uuid', $uuidsInConfig, 'NOT IN');
-    $tids = $query->execute();
-    $controller = StructureSyncHelper::getEntityManager()
-      ->getStorage('taxonomy_term');
-    $entities = $controller->loadMultiple($tids);
-    $controller->delete($entities);
+    if(!empty($uuidsInConfig)) {
+        $query = StructureSyncHelper::getEntityQuery('taxonomy_term');
+        $query->condition('uuid', $uuidsInConfig, 'NOT IN');
+        $tids = $query->execute();
+        $controller = StructureSyncHelper::getEntityManager()
+            ->getStorage('taxonomy_term');
+        $entities = $controller->loadMultiple($tids);
+        $controller->delete($entities);
+    }
 
     if (array_key_exists('drush', $context) && $context['drush'] === TRUE) {
       drush_log('Deleted taxonomies that were not in config', 'ok');
@@ -273,13 +275,15 @@ class TaxonomiesController extends ControllerBase {
         $uuidsInConfig[] = $taxonomy['uuid'];
       }
     }
-
-    $query = StructureSyncHelper::getEntityQuery('taxonomy_term');
-    $query->condition('uuid', $uuidsInConfig, 'IN');
-    $tids = $query->execute();
-    $controller = StructureSyncHelper::getEntityManager()
-      ->getStorage('taxonomy_term');
-    $entities = $controller->loadMultiple($tids);
+    $entities = [];
+    if(!empty($uuidsInConfig)) {
+        $query = StructureSyncHelper::getEntityQuery('taxonomy_term');
+        $query->condition('uuid', $uuidsInConfig, 'IN');
+        $tids = $query->execute();
+        $controller = StructureSyncHelper::getEntityManager()
+            ->getStorage('taxonomy_term');
+        $entities = $controller->loadMultiple($tids);
+    }
 
     $tidsDone = [];
     $tidsLeft = [];

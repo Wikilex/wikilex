@@ -2,7 +2,7 @@ CSS.AllowDuplicates
 TYPE: bool
 DEFAULT: false
 VERSION: 4.8.0
---Projet pour une collaboration sur les textes de lois--
+--DESCRIPTION--
 <p>
   By default, HTML Purifier removes duplicate CSS properties,
   like <code>color:red; color:blue</code>.  If this is set to

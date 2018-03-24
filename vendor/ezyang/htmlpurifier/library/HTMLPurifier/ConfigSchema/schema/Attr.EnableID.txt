@@ -2,7 +2,7 @@ Attr.EnableID
 TYPE: bool
 DEFAULT: false
 VERSION: 1.2.0
---Projet pour une collaboration sur les textes de lois--
+--DESCRIPTION--
 Allows the ID attribute in HTML.  This is disabled by default due to the
 fact that without proper configuration user input can easily break the
 validation of a webpage by specifying an ID that is already on the

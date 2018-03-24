@@ -2,7 +2,7 @@ CSS.MaxImgLength
 TYPE: string/null
 DEFAULT: '1200px'
 VERSION: 3.1.1
---Projet pour une collaboration sur les textes de lois--
+--DESCRIPTION--
 <p>
  This parameter sets the maximum allowed length on <code>img</code> tags,
  effectively the <code>width</code> and <code>height</code> properties.
