@@ -70,6 +70,9 @@
         "patches": {
             "drupal/adminimal_theme" : {
                 "Colors in horizontal and vertical toolbar need fixing." : "https://www.drupal.org/files/issues/adminimal_theme-fix-toolbar-colors-28226369.patch"
+            },
+            "drupal/migrate_tools" : {
+              "Undefined function drush_print_table" : "https://www.drupal.org/files/issues/2940847_5_remove_all_drush_print_table.patch"
             }
         }
     }

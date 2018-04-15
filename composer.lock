@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "38db31b795687a3b3ee4630d697b7c00",
+    "content-hash": "12617e6af3b96b19d94af43fce42f55e",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2636,6 +2636,9 @@
                     "services": {
                         "drush.services.yml": "^9"
                     }
+                },
+                "patches_applied": {
+                    "Undefined function drush_print_table": "https://www.drupal.org/files/issues/2940847_5_remove_all_drush_print_table.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -2662,7 +2665,8 @@
                 "source": "http://cgit.drupalcode.org/migrate_tools",
                 "issues": "http://drupal.org/project/migrate_tools",
                 "irc": "irc://irc.freenode.org/drupal-migrate"
-            }
+            },
+            "time": "2018-02-14 15:56:14"
         },
         {
             "name": "drupal/pathauto",

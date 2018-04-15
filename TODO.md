@@ -7,6 +7,14 @@
   * Avec la taxonomie dans un troisième temps. A faire après la création d'une entité de config pour les codes
       * Importance = Très haute.
 
+* Créer la commande de migration custom pour passer CID en paramètres.
+      * Importance = Très haute.
+      
+* Préserver les modifications apportés sur certains champs lors de supdates et en écraser d'autres.
+  *  overwrite_properties: à passer dans le yml     
+
+* Attribuer les migrations à l'user import.
+
 ### CONFIG ENTITY TEXTES DE LOIS
 * Transformer l'espace de formulaire des codes de lois en une création d'une entité config. 
 L'entité config va faire le lien entre les books, les vocabulaires de taxonomies, et les facets (et peut être d'autres choses suivant les besoins).

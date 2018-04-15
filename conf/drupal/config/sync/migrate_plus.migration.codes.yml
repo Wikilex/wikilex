@@ -1,4 +1,4 @@
-uuid: 65dc3fcf-ea1a-4060-be8c-fc4b4cb5befb
+uuid: 65dc3fcf-ea1a-4060-be8c-fc4b4cb5bfgh
 langcode: fr
 status: true
 dependencies:
@@ -24,6 +24,9 @@ process:
   title: titrefull
   field_cle_legi: cid_full
   field_cid: cID
+  uid:
+    plugin: default_value
+    default_value: 20
 destination:
   plugin: 'entity:node'
 migration_dependencies: {  }

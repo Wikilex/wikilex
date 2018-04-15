@@ -496,52 +496,47 @@ class MigrateToolsCommands extends DrushCommands {
    * @validate-module-enabled migrate_tools
    *
    * @aliases mmsg,migrate-messages
+   *
+   * @field-labels
+   *   source_ids_hash: Source IDs Hash
+   *   level: Level
+   *   message: Message
+   * @default-fields source_ids_hash,level,message
+   *
+   * @return \Consolidation\OutputFormatters\StructuredData\RowsOfFields
+   *   Source fields of the given migration formatted as a table.
    */
   public function messages($migration_id, array $options = ['csv' => NULL]) {
     /** @var \Drupal\migrate\Plugin\MigrationInterface $migration */
     $migration = $this->migrationPluginManager->createInstance(
       $migration_id
     );
-    if ($migration) {
-      $map = $migration->getIdMap();
-      $first = TRUE;
-      $table = [];
-      foreach ($map->getMessageIterator() as $row) {
-        unset($row->msgid);
-        if ($first) {
-          // @todo: Ideally, replace sourceid* with source key names. Or, should
-          // getMessageIterator() do that?
-          foreach ($row as $column => $value) {
-            $table[0][] = $column;
-          }
-          $first = FALSE;
-        }
-        $table[] = (array) $row;
-      }
-      if (empty($table)) {
-        $this->logger()->notice(dt('No messages for this migration'));
-      }
-      else {
-        if ($options['csv']) {
-          foreach ($table as $row) {
-            fputcsv(STDOUT, $row);
-          }
-        }
-        else {
-          $widths = [];
-          foreach ($table[0] as $header) {
-            $widths[] = strlen($header) + 1;
-          }
-
-          drush_print_table($table);
-        }
-      }
-    }
-    else {
+    if (!$migration) {
       $this->logger()->error(
         dt('Migration @id does not exist', ['@id' => $migration_id])
       );
+      return NULL;
     }
+
+    $map = $migration->getIdMap();
+    $table = [];
+    foreach ($map->getMessageIterator() as $row) {
+      unset($row->msgid);
+      $table[] = (array) $row;
+    }
+    if (empty($table)) {
+      $this->logger()->notice(dt('No messages for this migration'));
+      return NULL;
+    }
+
+    if ($options['csv']) {
+      fputcsv(STDOUT, array_keys($table[0]));
+      foreach ($table as $row) {
+        fputcsv(STDOUT, $row);
+      }
+      return NULL;
+    }
+    return new RowsOfFields($table);
   }
 
   /**
@@ -558,6 +553,14 @@ class MigrateToolsCommands extends DrushCommands {
    * @validate-module-enabled migrate_tools
    *
    * @aliases mfs, migrate-fields-source
+   *
+   * @field-labels
+   *   machine_name: Machine Name
+   *   description: Description
+   * @default-fields machine_name,description
+   *
+   * @return \Consolidation\OutputFormatters\StructuredData\RowsOfFields
+   *   Source fields of the given migration formatted as a table.
    */
   public function fieldsSource($migration_id) {
     /** @var \Drupal\migrate\Plugin\MigrationInterface $migration */
@@ -568,9 +571,12 @@ class MigrateToolsCommands extends DrushCommands {
       $source = $migration->getSourcePlugin();
       $table = [];
       foreach ($source->fields() as $machine_name => $description) {
-        $table[] = [strip_tags($description), $machine_name];
+        $table[] = [
+          'machine_name' => $machine_name,
+          'description' => $description,
+        ];
       }
-      drush_print_table($table);
+      return new RowsOfFields($table);
     }
     else {
       $this->logger()->error(
