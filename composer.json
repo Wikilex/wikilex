@@ -18,7 +18,7 @@
     "require": {
         "composer/installers": "~1.0",
         "cweagans/composer-patches": "~1.0",
-        "drush/drush": "^9.1",
+        "drush/drush": "^9.2",
         "drupal/core": "8.5.1",
         "drupal/admin_toolbar": "1.x-dev",
         "drupal/allowed_formats": "~1.0",

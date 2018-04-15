@@ -125,7 +125,17 @@ class HostPath
     }
 
     /**
-     * Return just the path portion of the host path
+     * Return just the path portion, without considering the alias root.
+     *
+     * @return string
+     */
+    public function getOriginalPath()
+    {
+        return $this->path;
+    }
+
+    /**
+     * Return the original path
      *
      * @return string
      */
@@ -225,7 +235,7 @@ class HostPath
 
     /**
      * Our fully qualified path passes the result through Path::makeAbsolute()
-     * which canonicallizes the path, removing any trailing slashes.
+     * which canonicalizes the path, removing any trailing slashes.
      * That is what we want most of the time; however, the trailing slash is
      * sometimes significant, e.g. for rsync, so we provide a separate API
      * for those cases where the trailing slash should be preserved.
