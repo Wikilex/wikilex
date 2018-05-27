@@ -9,6 +9,12 @@
 
 * Créer la commande de migration custom pour passer CID en paramètres.
       * Importance = Très haute.
+
+* Création d'un service pour clean après import
+  * Has chidreln pour les outlines.
+  * Supprimer les outlines avec des sections vides ou avec des articles tous abrogés, ou mortné.
+  * Gestion de la weight des outlines.
+  * Importance = Très haute.       
       
 * Préserver les modifications apportés sur certains champs lors de supdates et en écraser d'autres.
   *  overwrite_properties: à passer dans le yml     

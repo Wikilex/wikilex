@@ -8,13 +8,13 @@ use Drupal\migrate\Plugin\migrate\source\SqlBase;
 use Drupal\migrate\Row;
 
 /**
- * Source plugin for Section content.
+ * Source plugin for Article content.
  *
  * @MigrateSource(
- *   id = "sections_book"
+ *   id = "articles_book"
  * )
  */
-class SectionsBook extends SqlBase {
+class ArticlesBook extends SqlBase {
 
   // TODO : Gérer la sélection de la table, à partir du cID.
   /**
@@ -26,8 +26,8 @@ class SectionsBook extends SqlBase {
       $cid = $this->configuration['cid'];
       //dump($this->configuration);
     }
-    $query = $this->select($cid . '_sections', 's')
-      ->fields('s', array(
+    $query = $this->select($cid . '_articles', 'a')
+      ->fields('a', array(
         'id',
         'cid',
         'parent',
@@ -72,8 +72,6 @@ class SectionsBook extends SqlBase {
     else {
       $parent = $row->getSourceProperty('parent');
       $pid = $this->getPid('section', 'field_cle_legi', $parent);
-
-      // @todo : has_children, es ce que c'est le parent d'une autre section ?
     }
     if (!empty($pid)) {
       $row->setSourceProperty('pid', current($pid));
