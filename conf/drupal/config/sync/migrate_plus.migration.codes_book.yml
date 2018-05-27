@@ -20,12 +20,20 @@ source:
 process:
   # nid = "The book page's {node}.nid."
   nid:
-    plugin: default_value
-    default_value: 390
+    -
+      plugin: migration_lookup
+      migration: codes
+      source: cid
   # bid = "The book ID is the {book}.nid of the top-level page."
   book/bid:
-    plugin: default_value
-    default_value: 390
+    -
+      plugin: skip_on_empty
+      method: process
+      source: cid
+    -
+      plugin: migration_lookup
+      migration: codes
+      source: cid
   # pid = The parent ID (pid) is the id of the node above in the hierarchy, or zero if the node is at the top level in its outline.
   book/pid:
     plugin: default_value

@@ -53,6 +53,19 @@ alors les blocks de tags spéciaux s'affichent ?
 ### Flags
 * Activater le module et le configurer
 
+### Base données custom
+Il va y avoir en tous ces centaines de milliers de nodes, de terms de taxonomies.
+Et il y a des tables communes pour toutes les nodes, les books entrées, les termes de taxonomy, les entrées de champ des nodes.
+Les tables actuelles ne tiendront pas si on importe toute la législation.
+Il faut créér un système de dérivatif pour les tables également.
+#### Liste des tables à changer
+* book
+* taxonomy
+  * taxonomy_index
+  * taxonomy_term_data
+  * taxonomy_term_field_data
+  * taxonomy_term_hierarchy
+
 
 ### Theming
 
