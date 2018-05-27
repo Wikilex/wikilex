@@ -29,20 +29,7 @@ process:
       source: cid
   # pid = The parent ID (pid) is the id of the node above in the hierarchy, or zero if the node is at the top level in its outline.
   # Dans le cas d'une section on check si un parent est renseigné. Si vide, alors le pid est égal au bid (directement sous le node du code).
-  # @todo : FIXME PRIO.   skip_on_value sur le process ? sub_process ? static_map?
-  book/pid:
-    -
-      plugin: skip_on_empty
-      method: process
-      source: parent
-    -
-      plugin: migration_lookup
-      migration: sections
-      source: id
-    -
-      plugin: migration_lookup
-      migration: codes
-      source: cid
+  book/pid: pid
   # weight = Weight among book entries in the same book at the same depth.
   book/weight:
     plugin: default_value

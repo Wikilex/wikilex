@@ -2,6 +2,8 @@
 
 namespace Drupal\wikilex_migrate\Plugin\migrate\source;
 
+use Drupal\book\BookManager;
+use Drupal\book\BookOutlineStorage;
 use Drupal\migrate\Plugin\migrate\source\SqlBase;
 use Drupal\migrate\Row;
 use Drupal\node\Entity\Node;
@@ -66,19 +68,34 @@ class SectionsBook extends SqlBase {
   public function prepareRow(Row $row) {
     // @todo : PID = le nid du parent
     if (empty($parent = $row->getSourceProperty('parent'))) {
-      $parent =  $row->getSourceProperty('cid');
+      $cid=  $row->getSourceProperty('cid');
+     // $row->setSourceProperty('parent', $parent);
+      var_dump('empty parent');
+      dump($cid);
+      $pid = $this->getPid('code_de_lois', 'field_cid', $cid);
+      dump($pid);
     }
     else {
+      var_dump('not empty parent');
       $parent = $row->getSourceProperty('parent');
+      $pid = $this->getPid('section', 'field_cle_legi', $parent);
+      dump($pid);
+
+      // @todo : has_children, es ce que c'est le parent d'une autre section ?
+    }
+    if (!empty($pid)) {
+      $row->setSourceProperty('pid', current($pid));
     }
 
-    $row->setSourceProperty('parent', $parent);
-    // @todo : weight = es ce qu'il ya  d'autres nodes au même niveau ?
-    // @todo : has_children, es ce qu'il y a c'est le parent d'une autre section ?
-    // @todo : p1, p2, p3 etc.
-    // @todo : depth.
 
     return parent::prepareRow($row);
+  }
+
+  protected function getPid($bundle, $field_name, $value) {
+    $query = \Drupal::entityQuery('node')
+      ->condition('type', $bundle)
+      ->condition($field_name, $value);
+    return $query->execute();
   }
 
 /*  public function preprare(Node $node) {
