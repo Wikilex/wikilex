@@ -4,8 +4,6 @@ namespace Drupal\wikilex_migrate\Plugin\migrate\source;
 
 use Drupal\migrate\Plugin\migrate\source\SqlBase;
 use Drupal\migrate\Row;
-use Drupal\migrate\Plugin\MigrationInterface;
-use Drupal\Core\State\StateInterface;
 
 /**
  * Source plugin for code_de_lois content.
@@ -16,35 +14,41 @@ use Drupal\Core\State\StateInterface;
  */
 class CodesBook extends SqlBase {
 
-  // TODO : Gérer l'import d'un seul code, avec sélection sur le cID.
   /**
-   * {@inheritdoc}
+   * L'id unique du code de lois à importer
+   *
+   * @var string
    */
-  //public function __construct(array $configuration, $plugin_id, $plugin_definition, MigrationInterface $migration, StateInterface $state) {
+  protected $cid;
 
-    // Possiblement le moyen d'avoir une sélection dynamique de la table.
-  //  parent::__construct($configuration, $plugin_id, $plugin_definition, $migration, $state);
- // }
+  /**
+   * Fonction pour définir le CID.
+   *
+   * Utilisation prévue avec WikilexMigrateToolsCommands::wikilex_import(),
+   * et avec un cid valide passé en option de la commande.
+   *
+   * @param string $cid
+   */
+  public function setCid($cid) {
+    $this->cid = $cid;
+  }
 
-
- // protected function setUpDatabase(array $database_info) {
-  //d($database_info);
- // }
   /**
    * {@inheritdoc}
    */
   public function query() {
+
+    if (empty($this->cid)) {
+      return [];
+    }
 
     $query = $this->select('codes_versions', 'c')
       ->fields('c', array(
         'cID',
       ));
 
-    if (isset($this->configuration['cid'])) {
-      $query->condition('c.cID', $this->configuration['cid']);
-      //d($this->configuration);
-      //drush_print_r($this->configuration);
-    }
+    $query->condition('c.cID', $this->cid);
+
     return $query;
   }
 

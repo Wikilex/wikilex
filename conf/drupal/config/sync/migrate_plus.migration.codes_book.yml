@@ -16,7 +16,6 @@ migration_group: wikilex
 label: 'Import codes in Book Structure'
 source:
   plugin: codes_book
-  cid: C_06075116
 process:
   # nid = "The book page's {node}.nid."
   nid:

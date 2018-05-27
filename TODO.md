@@ -7,11 +7,9 @@
   * Avec la taxonomie dans un troisième temps. A faire après la création d'une entité de config pour les codes
       * Importance = Très haute.
 
-* Créer la commande de migration custom pour passer CID en paramètres.
-      * Importance = Très haute.
 
 * Création d'un service pour clean après import
-  * Has chidreln pour les outlines.
+  * Has children pour les outlines.
   * Supprimer les outlines avec des sections vides ou avec des articles tous abrogés, ou mortné.
   * Gestion de la weight des outlines.
   * Importance = Très haute.       

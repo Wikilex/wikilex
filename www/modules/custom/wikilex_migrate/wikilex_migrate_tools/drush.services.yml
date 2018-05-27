@@ -1,5 +1,6 @@
 services:
   wikilex_migrate_tools.commands:
     class: \Drupal\wikilex_migrate_tools\Commands\WikilexMigrateToolsCommands
+    arguments: ['@plugin.manager.migration', '@date.formatter', '@entity_type.manager', '@keyvalue']
     tags:
       - { name: drush.command }

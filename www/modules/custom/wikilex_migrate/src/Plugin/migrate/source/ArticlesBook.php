@@ -2,8 +2,6 @@
 
 namespace Drupal\wikilex_migrate\Plugin\migrate\source;
 
-use Drupal\book\BookManager;
-use Drupal\book\BookOutlineStorage;
 use Drupal\migrate\Plugin\migrate\source\SqlBase;
 use Drupal\migrate\Row;
 
@@ -16,16 +14,33 @@ use Drupal\migrate\Row;
  */
 class ArticlesBook extends SqlBase {
 
-  // TODO : Gérer la sélection de la table, à partir du cID.
+  /**
+   * L'id unique du code de lois à importer
+   *
+   * @var string
+   */
+  protected $cid;
+
+  /**
+   * Fonction pour définir le CID.
+   *
+   * Utilisation prévue avec WikilexMigrateToolsCommands::wikilex_import(),
+   * et avec un cid valide passé en option de la commande.
+   *
+   * @param string $cid
+   */
+  public function setCid($cid) {
+    $this->cid = $cid;
+  }
+
   /**
    * {@inheritdoc}
    */
   public function query() {
-    $cid = 'C_06070666';
-    if (isset($this->configuration['cid'])) {
-      $cid = $this->configuration['cid'];
-      //dump($this->configuration);
+    if (empty($this->cid)) {
+      return [];
     }
+    $cid = $this->cid;
     $query = $this->select($cid . '_articles', 'a')
       ->fields('a', array(
         'id',
