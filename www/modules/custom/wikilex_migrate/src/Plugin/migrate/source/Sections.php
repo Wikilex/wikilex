@@ -37,10 +37,13 @@ class Sections extends SqlBase {
    * {@inheritdoc}
    */
   public function query() {
+    // Renseigne un cid par default.
     if (empty($this->cid)) {
-      return [];
+      $cid = 'C_06070666';
     }
-    $cid = $this->cid;
+    else {
+      $cid = $this->cid;
+    }
     $query = $this->select($cid . '_sections', 's')
       ->fields('s', array(
         'id',
@@ -90,10 +93,11 @@ class Sections extends SqlBase {
     if (strlen($title) > 254) {
       $title = substr($title,0, 254);
     }
-    //$title = $title;
-    //$row->setSourceProperty('title', 'data');
     $row->setSourceProperty('titre', $title);
+
     return parent::prepareRow($row);
   }
+
+
 
 }

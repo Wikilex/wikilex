@@ -37,8 +37,12 @@ class Codes extends SqlBase {
    */
   public function query() {
 
+    // Renseigne un cid par default.
     if (empty($this->cid)) {
-      return [];
+      $cid = 'C_06070666';
+    }
+    else {
+      $cid = $this->cid;
     }
     $query = $this->select('codes_versions', 'c')
       ->fields('c', array(
@@ -72,7 +76,7 @@ class Codes extends SqlBase {
         'texte_id',
       ));
 
-    $query->condition('c.cID', $this->cid);
+    $query->condition('c.cID', $cid);
 
     return $query;
   }

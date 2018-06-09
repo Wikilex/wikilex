@@ -4,6 +4,7 @@ namespace Drupal\wikilex_migrate\Plugin\migrate\source;
 
 use Drupal\migrate\Plugin\migrate\source\SqlBase;
 use Drupal\migrate\Row;
+use Drupal\node\Entity\Node;
 
 /**
  * Source plugin for Article content.
@@ -37,10 +38,13 @@ class ArticlesBook extends SqlBase {
    * {@inheritdoc}
    */
   public function query() {
+    // Renseigne un cid par default.
     if (empty($this->cid)) {
-      return [];
+      $cid = 'C_06070666';
     }
-    $cid = $this->cid;
+    else {
+      $cid = $this->cid;
+    }
     $query = $this->select($cid . '_articles', 'a')
       ->fields('a', array(
         'id',
@@ -79,7 +83,13 @@ class ArticlesBook extends SqlBase {
    * {@inheritdoc}
    */
   public function prepareRow(Row $row) {
-    // @todo : PID = le nid du parent
+
+    // On n'ajoute pas à l'arborescence des articles non publiés.
+      $status = $this->isPublished($row->getSourceProperty('id'));
+       if (!$status) {
+         return FALSE;
+       }
+
     if (empty($parent = $row->getSourceProperty('parent'))) {
       $cid=  $row->getSourceProperty('cid');
       $pid = $this->getPid('code_de_lois', 'field_cid', $cid);
@@ -96,6 +106,32 @@ class ArticlesBook extends SqlBase {
     return parent::prepareRow($row);
   }
 
+  /**
+   * @param $id
+   *
+   * @return array|int
+   */
+  protected function isPublished($id) {
+    $query = \Drupal::entityQuery('node')
+      ->condition('type', 'article_de_lois')
+      ->condition('field_cle_legi', $id);
+    $result = $query->execute();
+    if (empty($result)) {
+      return NULL;
+    }
+    /** @var \Drupal\node\Entity\Node $article */
+    $article = Node::load(current($result));
+    return $article->isPublished();
+  }
+
+  /**
+   * Fonction pour trouver le nid du parent dans l'arborescence.
+   * @param $bundle
+   * @param $field_name
+   * @param $value
+   *
+   * @return array|int
+   */
   protected function getPid($bundle, $field_name, $value) {
     $query = \Drupal::entityQuery('node')
       ->condition('type', $bundle)

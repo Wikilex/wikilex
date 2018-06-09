@@ -37,10 +37,13 @@ class Articles extends SqlBase {
    * {@inheritdoc}
    */
   public function query() {
+    // Renseigne un cid par default.
     if (empty($this->cid)) {
-      return [];
+      $cid = 'C_06070666';
     }
-    $cid = $this->cid;
+    else {
+      $cid = $this->cid;
+    }
 
     $query = $this->select($cid . '_articles', 'a')
       ->fields('a', array(
