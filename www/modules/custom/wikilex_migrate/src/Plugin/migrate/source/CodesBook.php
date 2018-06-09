@@ -61,7 +61,7 @@ class CodesBook extends SqlBase {
    */
   public function fields() {
     $fields = [
-      'cid' => $this->t('CODE ID'),
+      'cID' => $this->t('CODE ID'),
     ];
 
     return $fields;
@@ -72,15 +72,11 @@ class CodesBook extends SqlBase {
    */
   public function getIds() {
     return [
-      'cid' => [
+      'cID' => [
         'type' => 'text',
-        'alias' => 'cid',
+        'alias' => 'cID',
       ],
     ];
-  }
-
-  public function prepareRow(Row $row) {
-    return parent::prepareRow($row);
   }
 
 }

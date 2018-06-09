@@ -44,7 +44,26 @@ process:
   field_num: num
   field_type: type
   field_etat: etat
+  field_date_debut:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: date_debut
+    -
+      plugin: get
+      source: date_debut
+  field_date_fin:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: date_fin
+    -
+      plugin: get
+      source: date_fin
   status: status
+  uid:
+    plugin: default_value
+    default_value: 20
 destination:
   plugin: 'entity:node'
 migration_dependencies:

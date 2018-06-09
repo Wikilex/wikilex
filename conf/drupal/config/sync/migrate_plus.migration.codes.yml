@@ -24,6 +24,22 @@ process:
   title: titrefull
   field_cle_legi: cid_full
   field_cid: cID
+  field_date_debut:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: date_debut
+    -
+      plugin: get
+      source: date_debut
+  field_date_fin:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: date_fin
+    -
+      plugin: get
+      source: date_fin
   uid:
     plugin: default_value
     default_value: 20

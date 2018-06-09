@@ -110,6 +110,7 @@ class Articles extends SqlBase {
       $title = $num;
     }
     $row->setSourceProperty('title', 'Article ' . $title);
+
     // Preparation pour le status de publication
     $status = 1;
     if ($etat = $row->getSourceProperty('etat')) {
