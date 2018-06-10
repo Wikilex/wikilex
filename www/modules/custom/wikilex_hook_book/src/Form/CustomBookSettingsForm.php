@@ -4,13 +4,14 @@ namespace Drupal\wikilex_hook_book\Form;
 
 // Classes referenced in this class:
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\Core\Form\ConfigFormBase;
 
 // This is the form we are extending
 use Drupal\book\Form\BookSettingsForm;
 
 /**
  * Configure site information settings for this site.
+ *
+ * @internal
  */
 class CustomBookSettingsForm extends BookSettingsForm {
 
@@ -33,6 +34,7 @@ class CustomBookSettingsForm extends BookSettingsForm {
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
+
     $types = node_type_get_names();
     $config = $this->config('book.settings');
 

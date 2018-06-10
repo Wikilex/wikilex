@@ -1,12 +1,6 @@
 # Liste des choses à faire dans Wikilex
 
 ### Import depuis Legi-php
-* Réaliser l'import
-  * Avec seulement le texte, titre, clé legi et reférences dans un 1er temps
-  * Avec une arborescence de Book dans un second temps.
-  * Avec la taxonomie dans un troisième temps. A faire après la création d'une entité de config pour les codes
-      * Importance = Très haute.
-
 
 * Création d'un service pour clean après import
   * Has children pour les outlines.
@@ -17,7 +11,6 @@
 * Préserver les modifications apportés sur certains champs lors de supdates et en écraser d'autres.
   *  overwrite_properties: à passer dans le yml     
 
-* Attribuer les migrations à l'user import.
 
 ### CONFIG ENTITY TEXTES DE LOIS
 * Transformer l'espace de formulaire des codes de lois en une création d'une entité config. 
@@ -43,16 +36,13 @@ Le système de dérivation qui sera mis en place reposera dessus.
 
 ### Taxonomie
 * S'assurer une interface claire avec celle de la config des codes. 
+* Création d'un service pour Insertion semi-automatique de la taxonomie appropriée suivant les codes. A faire après la création d'une entité de config pour les codes
+  * Importance basse.
 
 ### Facets 
 * On ne vas pas insérer dans la vue 70+ facets de tags. Il faut trouver un moyen de dérivation. Une réponse AJAX, si on sélectionne un des codes de lois,
 alors les blocks de tags spéciaux s'affichent ? 
 
-
- 
-### Menus
-* Gestion des books-menus
- 
 
 ### Flags
 * Activater le module et le configurer

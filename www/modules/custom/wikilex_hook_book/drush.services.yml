@@ -1,0 +1,6 @@
+services:
+  wikilex_hook_book.commands:
+    class: \Drupal\wikilex_hook_book\Commands\WikilexBookToolsCommands
+    arguments: ['@wikilex_hook_book.clean_outlines']
+    tags:
+      - { name: drush.command }

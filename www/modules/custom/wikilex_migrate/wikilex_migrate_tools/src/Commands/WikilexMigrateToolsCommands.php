@@ -3,11 +3,6 @@
 namespace Drupal\wikilex_migrate_tools\Commands;
 
 use Consolidation\OutputFormatters\StructuredData\RowsOfFields;
-use Drupal\bootstrap\Utility\Unicode;
-use Drupal\Core\Datetime\DateFormatter;
-use Drupal\Core\Entity\EntityTypeManagerInterface;
-use Drupal\migrate\Exception\RequirementsException;
-use Drupal\migrate\Plugin\RequirementsInterface;
 use Drupal\migrate_tools\Commands\MigrateToolsCommands;
 use Drupal\migrate_tools\MigrateExecutable;
 use Drupal\migrate\Plugin\MigrationInterface;
