@@ -39,15 +39,15 @@ class Codes extends SqlBase {
 
     // Renseigne un cid par default.
     if (empty($this->cid)) {
-      $cid = 'C_06070666';
+      $cid = 'C_06075116';
     }
     else {
       $cid = $this->cid;
     }
-    $query = $this->select('codes_versions', 'c')
+
+    $query = $this->select('textes_versions', 'tv')
       ->fields('c', array(
-        'cID',
-        'cid_full',
+        'id',
         'titrefull',
         'titrefull_s',
         'date_debut',
@@ -76,7 +76,8 @@ class Codes extends SqlBase {
         'texte_id',
       ));
 
-    $query->condition('c.cID', $cid);
+    $codes_liste = \Drupal::service('codes_list');
+    $query->condition('tv.id', $codes_liste->getCidTexte($cid));
 
     return $query;
   }
@@ -86,8 +87,7 @@ class Codes extends SqlBase {
    */
   public function fields() {
     $fields = [
-      'cID' => $this->t('CODE ID'),
-      'cid_full' => $this->t('LEGI CODE ID'),
+      'id' => $this->t('CODE ID'),
       'titrefull' => $this->t('Titre'),
       'titrefull_s' => $this->t('Titre full_s'),
       'date_debut' => $this->t('Date début'),
@@ -124,9 +124,9 @@ class Codes extends SqlBase {
    */
   public function getIds() {
     return [
-      'cID' => [
+      'id' => [
         'type' => 'text',
-        'alias' => 'cID',
+        'alias' => 'id',
       ],
     ];
   }

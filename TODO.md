@@ -1,6 +1,11 @@
 # Liste des choses à faire dans Wikilex
 
 ### Import depuis Legi-php
+* finir le cidText_list.php
+* Le transformer en service pour l'utiliser.
+
+* Finir le basculement vers import par postgresql
+
 
 * Création d'un service pour clean après import
   * Has children pour les outlines.
