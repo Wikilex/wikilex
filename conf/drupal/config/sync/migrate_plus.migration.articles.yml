@@ -32,7 +32,7 @@ process:
   field_ref_sections:
     plugin: migration_lookup
     migration: sections
-    source: parent
+    source: sections
   body/value: bloc_textuel
   body/format:
     plugin: default_value

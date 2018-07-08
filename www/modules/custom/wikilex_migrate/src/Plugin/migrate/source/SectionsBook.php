@@ -2,7 +2,6 @@
 
 namespace Drupal\wikilex_migrate\Plugin\migrate\source;
 
-use Drupal\migrate\Plugin\migrate\source\SqlBase;
 use Drupal\migrate\Row;
 
 /**
@@ -12,7 +11,7 @@ use Drupal\migrate\Row;
  *   id = "sections_book"
  * )
  */
-class SectionsBook extends SqlBase {
+class SectionsBook extends ImportWikilex {
 
   /**
    * L'id unique du code de lois à importer
@@ -44,12 +43,14 @@ class SectionsBook extends SqlBase {
     else {
       $cid = $this->cid;
     }
-    $query = $this->select($cid . '_sections', 's')
+
+    $query = $this->select('sections', 's')
       ->fields('s', array(
         'id',
         'cid',
         'parent',
       ));
+    $query->condition('s.cid', $this->codesListe->getCidTexte($cid));
     return $query;
   }
 

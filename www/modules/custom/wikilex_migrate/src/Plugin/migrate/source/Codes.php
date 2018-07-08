@@ -2,8 +2,6 @@
 
 namespace Drupal\wikilex_migrate\Plugin\migrate\source;
 
-use Drupal\migrate\Plugin\migrate\source\SqlBase;
-
 /**
  * Source plugin for code_de_lois content.
  *
@@ -11,7 +9,7 @@ use Drupal\migrate\Plugin\migrate\source\SqlBase;
  *   id = "codes"
  * )
  */
-class Codes extends SqlBase {
+class Codes extends ImportWikilex {
 
   /**
    * L'id unique du code de lois à importer
@@ -37,16 +35,17 @@ class Codes extends SqlBase {
    */
   public function query() {
 
-    // Renseigne un cid par default.
+    // Renseigne un cid par default afin de
+    // pas provoquer de bug avec les commandes drush de migration ordinaires.
     if (empty($this->cid)) {
-      $cid = 'C_06075116';
+      $cid = 'C_06070666';
     }
     else {
       $cid = $this->cid;
     }
 
     $query = $this->select('textes_versions', 'tv')
-      ->fields('c', array(
+      ->fields('tv', array(
         'id',
         'titrefull',
         'titrefull_s',
@@ -76,8 +75,7 @@ class Codes extends SqlBase {
         'texte_id',
       ));
 
-    $codes_liste = \Drupal::service('codes_list');
-    $query->condition('tv.id', $codes_liste->getCidTexte($cid));
+    $query->condition('tv.id', $this->codesListe->getCidTexte($cid));
 
     return $query;
   }

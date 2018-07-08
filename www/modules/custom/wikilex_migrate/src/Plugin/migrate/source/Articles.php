@@ -2,7 +2,6 @@
 
 namespace Drupal\wikilex_migrate\Plugin\migrate\source;
 
-use Drupal\migrate\Plugin\migrate\source\SqlBase;
 use Drupal\migrate\Row;
 
 /**
@@ -12,7 +11,7 @@ use Drupal\migrate\Row;
  *   id = "articles"
  * )
  */
-class Articles extends SqlBase {
+class Articles extends ImportWikilex {
 
   /**
    * L'id unique du code de lois à importer
@@ -37,7 +36,8 @@ class Articles extends SqlBase {
    * {@inheritdoc}
    */
   public function query() {
-    // Renseigne un cid par default.
+    // Renseigne un cid par default afin de
+    // pas provoquer de bug avec les commandes drush de migration ordinaires.
     if (empty($this->cid)) {
       $cid = 'C_06070666';
     }
@@ -45,12 +45,11 @@ class Articles extends SqlBase {
       $cid = $this->cid;
     }
 
-    $query = $this->select($cid . '_articles', 'a')
+    $query = $this->select('articles', 'a')
       ->fields('a', array(
         'id',
         'cid',
-        'cid_full',
-        'parent',
+        'sections',
         'bloc_textuel',
         'num',
         'etat',
@@ -61,6 +60,7 @@ class Articles extends SqlBase {
         'nota',
         'mtime',
       ));
+    $query->condition('a.cid', $this->codesListe->getCidTexte($cid));
     return $query;
   }
 
@@ -70,9 +70,8 @@ class Articles extends SqlBase {
   public function fields() {
     $fields = [
       'id' => $this->t('LEGI ARTICLE ID'),
-      'cid' => $this->t('CODE ID'),
-      'cid_full' => $this->t('LEGI CODE ID'),
-      'parent' => $this->t('Section Parent'),
+      'cid' => $this->t('LEGI CODE ID'),
+      'sections' => $this->t('Section Parent'),
       'bloc_textuel' => $this->t('Bloc Textuel'),
       'num' => $this->t('Num'),
       'etat' => $this->t('Etat'),

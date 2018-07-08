@@ -2,7 +2,6 @@
 
 namespace Drupal\wikilex_migrate\Plugin\migrate\source;
 
-use Drupal\migrate\Plugin\migrate\source\SqlBase;
 use Drupal\migrate\Row;
 use Drupal\node\Entity\Node;
 
@@ -13,7 +12,7 @@ use Drupal\node\Entity\Node;
  *   id = "articles_book"
  * )
  */
-class ArticlesBook extends SqlBase {
+class ArticlesBook extends ImportWikilex {
 
   /**
    * L'id unique du code de lois à importer
@@ -38,19 +37,21 @@ class ArticlesBook extends SqlBase {
    * {@inheritdoc}
    */
   public function query() {
-    // Renseigne un cid par default.
+    // Renseigne un cid par default afin de
+    // pas provoquer de bug avec les commandes drush de migration ordinaires.
     if (empty($this->cid)) {
       $cid = 'C_06070666';
     }
     else {
       $cid = $this->cid;
     }
-    $query = $this->select($cid . '_articles', 'a')
+    $query = $this->select('articles', 'a')
       ->fields('a', array(
         'id',
         'cid',
         'parent',
       ));
+    $query->condition('a.cid', $this->codesListe->getCidTexte($cid));
     return $query;
   }
 
@@ -90,12 +91,12 @@ class ArticlesBook extends SqlBase {
          return FALSE;
        }
 
-    if (empty($parent = $row->getSourceProperty('parent'))) {
-      $cid=  $row->getSourceProperty('cid');
+    if (empty($parent = $row->getSourceProperty('sections'))) {
+      $cid = $row->getSourceProperty('cid');
       $pid = $this->getPid('code_de_lois', 'field_cid', $cid);
     }
     else {
-      $parent = $row->getSourceProperty('parent');
+      $parent = $row->getSourceProperty('sections');
       $pid = $this->getPid('section', 'field_cle_legi', $parent);
     }
     if (!empty($pid)) {

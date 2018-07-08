@@ -1,2 +1,7 @@
 <?php
 
+function test_codes_list() {
+  $codes_liste = \Drupal::service('codes_liste');
+  $cidTexte = $codes_liste->getCidTexte('C_06070666');
+  echo($cidTexte);
+}

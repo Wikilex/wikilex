@@ -2,7 +2,6 @@
 
 namespace Drupal\wikilex_migrate\Plugin\migrate\source;
 
-use Drupal\migrate\Plugin\migrate\source\SqlBase;
 use Drupal\migrate\Row;
 
 /**
@@ -12,7 +11,7 @@ use Drupal\migrate\Row;
  *   id = "sections"
  * )
  */
-class Sections extends SqlBase {
+class Sections extends ImportWikilex {
 
   /**
    * L'id unique du code de lois à importer
@@ -44,15 +43,16 @@ class Sections extends SqlBase {
     else {
       $cid = $this->cid;
     }
-    $query = $this->select($cid . '_sections', 's')
+    $query = $this->select('sections', 's')
       ->fields('s', array(
         'id',
         'cid',
-        'cid_full',
         'titre_ta',
+        'commentaire',
         'parent',
         'mtime',
       ));
+    $query->condition('s.cid', $this->codesListe->getCidTexte($cid));
     return $query;
   }
 
@@ -62,11 +62,11 @@ class Sections extends SqlBase {
   public function fields() {
     $fields = [
       'id' => $this->t('LEGI SECTION ID'),
-      'cid' => $this->t('CODE ID'),
-      'cid_full' => $this->t('LEGI CODE ID'),
+      'cid' => $this->t('LEGI CODE ID'),
       'titre_ta' => $this->t('Titre'),
       'parent' => $this->t('Section Parent'),
       'mtime' => $this->t('mtime Legi-php'),
+      'commentaire' => $this->t('Commentaire'),
     ];
 
     return $fields;

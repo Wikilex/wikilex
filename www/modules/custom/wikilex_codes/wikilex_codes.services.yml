@@ -1,0 +1,3 @@
+services:
+  codes_liste:
+    class: Drupal\wikilex_codes\CodesListe

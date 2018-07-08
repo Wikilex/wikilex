@@ -2,9 +2,6 @@
 
 namespace Drupal\wikilex_migrate\Plugin\migrate\source;
 
-use Drupal\migrate\Plugin\migrate\source\SqlBase;
-use Drupal\migrate\Row;
-
 /**
  * Source plugin for code_de_lois content.
  *
@@ -12,7 +9,7 @@ use Drupal\migrate\Row;
  *   id = "codes_book"
  * )
  */
-class CodesBook extends SqlBase {
+class CodesBook extends ImportWikilex {
 
   /**
    * L'id unique du code de lois à importer
@@ -38,7 +35,8 @@ class CodesBook extends SqlBase {
    */
   public function query() {
 
-    // Renseigne un cid par default.
+    // Renseigne un cid par default afin de
+    // pas provoquer de bug avec les commandes drush de migration ordinaires.
     if (empty($this->cid)) {
       $cid = 'C_06070666';
     }
@@ -46,12 +44,13 @@ class CodesBook extends SqlBase {
       $cid = $this->cid;
     }
 
-    $query = $this->select('codes_versions', 'c')
-      ->fields('c', array(
-        'cID',
+
+    $query = $this->select('textes_versions', 'tv')
+      ->fields('tv', array(
+        'id',
       ));
 
-    $query->condition('c.cID', $cid);
+    $query->condition('tv.id', $this->codesListe->getCidTexte($cid));
 
     return $query;
   }
@@ -61,7 +60,7 @@ class CodesBook extends SqlBase {
    */
   public function fields() {
     $fields = [
-      'cID' => $this->t('CODE ID'),
+      'id' => $this->t('CODE ID'),
     ];
 
     return $fields;
@@ -72,9 +71,9 @@ class CodesBook extends SqlBase {
    */
   public function getIds() {
     return [
-      'cID' => [
+      'id' => [
         'type' => 'text',
-        'alias' => 'cID',
+        'alias' => 'id',
       ],
     ];
   }

@@ -1,3 +1,0 @@
-services:
-  cid_list:
-    class: Drupal\wikilex_common\CodesListe
